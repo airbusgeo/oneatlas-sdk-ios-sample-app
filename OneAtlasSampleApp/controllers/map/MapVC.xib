@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapVC" customModule="OneAtlasSampleApp" customModuleProvider="target">
+            <connections>
+                <outlet property="btFloating" destination="K7G-6J-ozg" id="XiE-cG-VNV"/>
+                <outlet property="mglMap" destination="8PD-eE-1DK" id="GSg-KV-ofA"/>
+                <outlet property="uvFloatingBottomConstraint" destination="Xlt-gt-Va6" id="M6g-z6-24E"/>
+                <outlet property="view" destination="Qrl-eN-OKp" id="cZ6-D5-FhG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Qrl-eN-OKp">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-eE-1DK" customClass="MGLMapView">
+                    <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="showsHeading" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YH9-DE-cgE">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6ls-ck-B9P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7G-6J-ozg" customClass="UIFloatingMapButton" customModule="OneAtlasSampleApp" customModuleProvider="target">
+                    <rect key="frame" x="205" y="856" width="201" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="5AW-hu-sZR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <color key="tintColor" red="0.10476172715425491" green="0.48844403028488159" blue="0.86887794733047485" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                    <state key="normal" title="SEARCH THIS AREA" image="baseline_search_black_24pt">
+                        <color key="titleColor" red="0.086274509799999996" green="0.49019607840000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onFloatingButtonClicked:" destination="-1" eventType="touchUpInside" id="Nmm-fk-Cb0"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8PD-eE-1DK" firstAttribute="height" secondItem="Qrl-eN-OKp" secondAttribute="height" id="0Lh-T4-RqU"/>
+                <constraint firstItem="8PD-eE-1DK" firstAttribute="width" secondItem="Qrl-eN-OKp" secondAttribute="width" id="5Ks-Yw-adK"/>
+                <constraint firstAttribute="trailing" secondItem="K7G-6J-ozg" secondAttribute="trailing" constant="8" id="69G-zb-fDS"/>
+                <constraint firstItem="E00-N2-YlE" firstAttribute="trailing" secondItem="YH9-DE-cgE" secondAttribute="trailing" id="HlI-SL-WyJ"/>
+                <constraint firstAttribute="bottom" secondItem="K7G-6J-ozg" secondAttribute="bottom" constant="8" id="Xlt-gt-Va6"/>
+                <constraint firstItem="8PD-eE-1DK" firstAttribute="centerY" secondItem="E00-N2-YlE" secondAttribute="centerY" id="aC5-pw-xkd"/>
+                <constraint firstItem="YH9-DE-cgE" firstAttribute="leading" secondItem="E00-N2-YlE" secondAttribute="leading" id="dGq-r9-34t"/>
+                <constraint firstAttribute="top" secondItem="YH9-DE-cgE" secondAttribute="top" id="fZm-yc-Ows"/>
+                <constraint firstItem="8PD-eE-1DK" firstAttribute="centerX" secondItem="E00-N2-YlE" secondAttribute="centerX" id="kZv-T8-Tru"/>
+                <constraint firstItem="E00-N2-YlE" firstAttribute="top" secondItem="YH9-DE-cgE" secondAttribute="bottom" id="sCX-qw-oAh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="E00-N2-YlE"/>
+            <point key="canvasLocation" x="628.98550724637687" y="-439.28571428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="baseline_search_black_24pt" width="24" height="24"/>
+    </resources>
+</document>

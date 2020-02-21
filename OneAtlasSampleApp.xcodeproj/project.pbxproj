@@ -1,0 +1,848 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		090B6CFF2338B50E00983E87 /* UISearchDrawerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090B6CFC2338B50E00983E87 /* UISearchDrawerHeader.swift */; };
+		090B6D032338B53900983E87 /* UISearchDrawerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090B6D002338B53900983E87 /* UISearchDrawerHeader.xib */; };
+		09203BC22354A1BC00C4E7DE /* UIUserAOITableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09203BBE2354A1BC00C4E7DE /* UIUserAOITableCell.swift */; };
+		09203BC52354A1BC00C4E7DE /* UIUserAOITableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09203BBF2354A1BC00C4E7DE /* UIUserAOITableCell.xib */; };
+		09203BCC2355D17800C4E7DE /* UIFloatingMapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09203BC62355CF5600C4E7DE /* UIFloatingMapButton.swift */; };
+		092F48A0233265B6008002A3 /* OAUserAOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F489F233265B6008002A3 /* OAUserAOI.swift */; };
+		092F48C62333DE29008002A3 /* UISearchDrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F48C42333DE29008002A3 /* UISearchDrawerCell.swift */; };
+		092F48C72333DE29008002A3 /* UISearchDrawerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092F48C52333DE29008002A3 /* UISearchDrawerCell.xib */; };
+		093784D42330C6310054DCF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093784D32330C6310054DCF1 /* AppDelegate.swift */; };
+		093784DB2330C6320054DCF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093784DA2330C6320054DCF1 /* Assets.xcassets */; };
+		093785072330C6B30054DCF1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785052330C6B30054DCF1 /* Config.swift */; };
+		093785412330C6BC0054DCF1 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937850D2330C6BC0054DCF1 /* SplashVC.swift */; };
+		093785422330C6BC0054DCF1 /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0937850E2330C6BC0054DCF1 /* SplashVC.xib */; };
+		0937854D2330C6BC0054DCF1 /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0937851E2330C6BC0054DCF1 /* MapVC.xib */; };
+		093785502330C6BC0054DCF1 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785212330C6BC0054DCF1 /* MapVC.swift */; };
+		093785532330C6BC0054DCF1 /* BaseDrawerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785252330C6BC0054DCF1 /* BaseDrawerVC.swift */; };
+		093785542330C6BC0054DCF1 /* SearchResultsDrawerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093785272330C6BC0054DCF1 /* SearchResultsDrawerVC.xib */; };
+		093785552330C6BC0054DCF1 /* FeatureDetailsDrawerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785282330C6BC0054DCF1 /* FeatureDetailsDrawerVC.swift */; };
+		093785562330C6BC0054DCF1 /* FeatureDetailsDrawerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093785292330C6BC0054DCF1 /* FeatureDetailsDrawerVC.xib */; };
+		093785572330C6BC0054DCF1 /* SearchResultsDrawerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937852A2330C6BC0054DCF1 /* SearchResultsDrawerVC.swift */; };
+		093785582330C6BC0054DCF1 /* SearchDrawerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937852B2330C6BC0054DCF1 /* SearchDrawerVC.swift */; };
+		093785592330C6BC0054DCF1 /* SearchResultsFilterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0937852C2330C6BC0054DCF1 /* SearchResultsFilterVC.xib */; };
+		0937855A2330C6BC0054DCF1 /* SearchResultsFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937852D2330C6BC0054DCF1 /* SearchResultsFilterVC.swift */; };
+		0937855B2330C6BC0054DCF1 /* SearchDrawerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0937852E2330C6BC0054DCF1 /* SearchDrawerVC.xib */; };
+		0937855C2330C6BC0054DCF1 /* SearchHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937852F2330C6BC0054DCF1 /* SearchHistoryManager.swift */; };
+		0937855E2330C6BC0054DCF1 /* UILayerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785322330C6BC0054DCF1 /* UILayerCollectionCell.swift */; };
+		093785602330C6BC0054DCF1 /* UILayerCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093785342330C6BC0054DCF1 /* UILayerCollectionCell.xib */; };
+		093785612330C6BC0054DCF1 /* DrawerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785352330C6BC0054DCF1 /* DrawerManager.swift */; };
+		0937857A2330C6EE0054DCF1 /* CacheUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785732330C6EE0054DCF1 /* CacheUtils.swift */; };
+		0937857B2330C6EE0054DCF1 /* GeoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785742330C6EE0054DCF1 /* GeoUtils.swift */; };
+		0937857C2330C6EE0054DCF1 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785752330C6EE0054DCF1 /* DateUtils.swift */; };
+		0937857D2330C6EE0054DCF1 /* XibUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785762330C6EE0054DCF1 /* XibUtils.swift */; };
+		0937857E2330C6EE0054DCF1 /* MiscUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785772330C6EE0054DCF1 /* MiscUtils.swift */; };
+		0937857F2330C6EE0054DCF1 /* OneAtlasUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785782330C6EE0054DCF1 /* OneAtlasUtils.swift */; };
+		093785802330C6EE0054DCF1 /* ToastUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785792330C6EE0054DCF1 /* ToastUtils.swift */; };
+		093785A72330C6F80054DCF1 /* UICardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093785852330C6F80054DCF1 /* UICardHeaderView.xib */; };
+		093785A92330C6F80054DCF1 /* UICardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785872330C6F80054DCF1 /* UICardFooterView.swift */; };
+		093785AB2330C6F80054DCF1 /* UICardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785892330C6F80054DCF1 /* UICardHeaderView.swift */; };
+		093785B42330C6F80054DCF1 /* UIMultiWorkspaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785942330C6F80054DCF1 /* UIMultiWorkspaceListView.swift */; };
+		093785B52330C6F80054DCF1 /* UIWorkspaceTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785952330C6F80054DCF1 /* UIWorkspaceTableView.swift */; };
+		093785B62330C6F80054DCF1 /* UIFeatureTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093785962330C6F80054DCF1 /* UIFeatureTableCell.xib */; };
+		093785B72330C6F80054DCF1 /* UIFeatureTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785972330C6F80054DCF1 /* UIFeatureTableCell.swift */; };
+		093785B82330C6F80054DCF1 /* UIFeatureSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093785982330C6F80054DCF1 /* UIFeatureSummaryView.xib */; };
+		093785B92330C6F80054DCF1 /* UIMultiWorkspaceListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093785992330C6F80054DCF1 /* UIMultiWorkspaceListView.xib */; };
+		093785BA2330C6F80054DCF1 /* UIFeatureSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937859A2330C6F80054DCF1 /* UIFeatureSummaryView.swift */; };
+		093785BB2330C6F80054DCF1 /* UIPagingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937859C2330C6F80054DCF1 /* UIPagingTableView.swift */; };
+		093785BC2330C6F80054DCF1 /* UIAutoRegisterTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937859D2330C6F80054DCF1 /* UIAutoRegisterTableCell.swift */; };
+		093785BD2330C6F80054DCF1 /* UINavigationBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937859E2330C6F80054DCF1 /* UINavigationBarButton.swift */; };
+		093785BF2330C6F80054DCF1 /* UIFeaturePropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785A12330C6F80054DCF1 /* UIFeaturePropertyCell.swift */; };
+		093785C12330C6F80054DCF1 /* UIFeaturePropertyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093785A32330C6F80054DCF1 /* UIFeaturePropertyCell.xib */; };
+		093785C22330C6F80054DCF1 /* UIFeatureDetailsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785A42330C6F80054DCF1 /* UIFeatureDetailsTableView.swift */; };
+		093785EC23312D990054DCF1 /* UICountingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093785EB23312D990054DCF1 /* UICountingListView.swift */; };
+		099B9D7223585A64001332DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 099B9D6F23585A64001332DE /* LaunchScreen.xib */; };
+		09A271892359AC4E00B762ED /* MapHelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A271852359AC4E00B762ED /* MapHelpVC.swift */; };
+		09A2718C2359AC4E00B762ED /* MapHelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A271862359AC4E00B762ED /* MapHelpVC.xib */; };
+		09A30C3123D7341700F764D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09A30C2F23D7341700F764D4 /* Localizable.strings */; };
+		09A30C3423D738BE00F764D4 /* oneatlas.apikey in Resources */ = {isa = PBXBuildFile; fileRef = 09A30C3223D738BE00F764D4 /* oneatlas.apikey */; };
+		09A30C3523D738BE00F764D4 /* mapbox.apikey in Resources */ = {isa = PBXBuildFile; fileRef = 09A30C3323D738BE00F764D4 /* mapbox.apikey */; };
+		09A30C3E23D742EA00F764D4 /* MapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A30C3923D742EA00F764D4 /* MapUtils.swift */; };
+		09A30C3F23D742EA00F764D4 /* MapboxEngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A30C3A23D742EA00F764D4 /* MapboxEngineManager.swift */; };
+		09A30C4023D742EA00F764D4 /* MapEngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A30C3B23D742EA00F764D4 /* MapEngineManager.swift */; };
+		09A30C4123D742EA00F764D4 /* MapEngineConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A30C3C23D742EA00F764D4 /* MapEngineConfig.swift */; };
+		09A30C4423D742FE00F764D4 /* AirbusFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A30C4223D742FE00F764D4 /* AirbusFonts.swift */; };
+		09A30C4523D742FE00F764D4 /* AirbusColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A30C4323D742FE00F764D4 /* AirbusColors.swift */; };
+		09DEDF8D2334F767005EA7EE /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEDF8C2334F767005EA7EE /* UserManager.swift */; };
+		09F6DE202350671E00B9E469 /* UIPassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6DE1D2350671800B9E469 /* UIPassthroughView.swift */; };
+		09FD2E8023324FFF004B31A4 /* BaseFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD2E7F23324FFF004B31A4 /* BaseFilterVC.swift */; };
+		09FD2E8523325A12004B31A4 /* UIWorkspaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD2E8423325A12004B31A4 /* UIWorkspaceListView.swift */; };
+		09FD2E8723325AAD004B31A4 /* UIWorkspaceListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FD2E8623325AAD004B31A4 /* UIWorkspaceListView.xib */; };
+		6404E90CF4D78DF66655CC8F /* Pods_OneAtlasSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0326FBD1154023874D590FB8 /* Pods_OneAtlasSampleApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0326FBD1154023874D590FB8 /* Pods_OneAtlasSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAtlasSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05261641F40D1CCD98B9AEA2 /* Pods-OneAtlasSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAtlasSampleApp.release.xcconfig"; path = "Target Support Files/Pods-OneAtlasSampleApp/Pods-OneAtlasSampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		090B6CFC2338B50E00983E87 /* UISearchDrawerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchDrawerHeader.swift; sourceTree = "<group>"; };
+		090B6D002338B53900983E87 /* UISearchDrawerHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UISearchDrawerHeader.xib; sourceTree = "<group>"; };
+		09203BBE2354A1BC00C4E7DE /* UIUserAOITableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUserAOITableCell.swift; sourceTree = "<group>"; };
+		09203BBF2354A1BC00C4E7DE /* UIUserAOITableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIUserAOITableCell.xib; sourceTree = "<group>"; };
+		09203BC62355CF5600C4E7DE /* UIFloatingMapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFloatingMapButton.swift; sourceTree = "<group>"; };
+		092F489F233265B6008002A3 /* OAUserAOI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAUserAOI.swift; sourceTree = "<group>"; };
+		092F48C42333DE29008002A3 /* UISearchDrawerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchDrawerCell.swift; sourceTree = "<group>"; };
+		092F48C52333DE29008002A3 /* UISearchDrawerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UISearchDrawerCell.xib; sourceTree = "<group>"; };
+		093784D02330C6310054DCF1 /* OneAtlasSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneAtlasSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		093784D32330C6310054DCF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		093784DA2330C6320054DCF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		093785052330C6B30054DCF1 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		0937850D2330C6BC0054DCF1 /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		0937850E2330C6BC0054DCF1 /* SplashVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashVC.xib; sourceTree = "<group>"; };
+		0937851E2330C6BC0054DCF1 /* MapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
+		093785212330C6BC0054DCF1 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		093785252330C6BC0054DCF1 /* BaseDrawerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDrawerVC.swift; sourceTree = "<group>"; };
+		093785272330C6BC0054DCF1 /* SearchResultsDrawerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsDrawerVC.xib; sourceTree = "<group>"; };
+		093785282330C6BC0054DCF1 /* FeatureDetailsDrawerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureDetailsDrawerVC.swift; sourceTree = "<group>"; };
+		093785292330C6BC0054DCF1 /* FeatureDetailsDrawerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeatureDetailsDrawerVC.xib; sourceTree = "<group>"; };
+		0937852A2330C6BC0054DCF1 /* SearchResultsDrawerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsDrawerVC.swift; sourceTree = "<group>"; };
+		0937852B2330C6BC0054DCF1 /* SearchDrawerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDrawerVC.swift; sourceTree = "<group>"; };
+		0937852C2330C6BC0054DCF1 /* SearchResultsFilterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsFilterVC.xib; sourceTree = "<group>"; };
+		0937852D2330C6BC0054DCF1 /* SearchResultsFilterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsFilterVC.swift; sourceTree = "<group>"; };
+		0937852E2330C6BC0054DCF1 /* SearchDrawerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchDrawerVC.xib; sourceTree = "<group>"; };
+		0937852F2330C6BC0054DCF1 /* SearchHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchHistoryManager.swift; path = ../controllers/map/drawers/search/SearchHistoryManager.swift; sourceTree = "<group>"; };
+		093785322330C6BC0054DCF1 /* UILayerCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILayerCollectionCell.swift; path = ../../controllers/map/drawers/layer/UILayerCollectionCell.swift; sourceTree = "<group>"; };
+		093785342330C6BC0054DCF1 /* UILayerCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UILayerCollectionCell.xib; path = ../../controllers/map/drawers/layer/UILayerCollectionCell.xib; sourceTree = "<group>"; };
+		093785352330C6BC0054DCF1 /* DrawerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerManager.swift; sourceTree = "<group>"; };
+		093785732330C6EE0054DCF1 /* CacheUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheUtils.swift; sourceTree = "<group>"; };
+		093785742330C6EE0054DCF1 /* GeoUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoUtils.swift; sourceTree = "<group>"; };
+		093785752330C6EE0054DCF1 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		093785762330C6EE0054DCF1 /* XibUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibUtils.swift; sourceTree = "<group>"; };
+		093785772330C6EE0054DCF1 /* MiscUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscUtils.swift; sourceTree = "<group>"; };
+		093785782330C6EE0054DCF1 /* OneAtlasUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneAtlasUtils.swift; sourceTree = "<group>"; };
+		093785792330C6EE0054DCF1 /* ToastUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastUtils.swift; sourceTree = "<group>"; };
+		093785852330C6F80054DCF1 /* UICardHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICardHeaderView.xib; sourceTree = "<group>"; };
+		093785872330C6F80054DCF1 /* UICardFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICardFooterView.swift; sourceTree = "<group>"; };
+		093785892330C6F80054DCF1 /* UICardHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICardHeaderView.swift; sourceTree = "<group>"; };
+		093785942330C6F80054DCF1 /* UIMultiWorkspaceListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMultiWorkspaceListView.swift; sourceTree = "<group>"; };
+		093785952330C6F80054DCF1 /* UIWorkspaceTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWorkspaceTableView.swift; sourceTree = "<group>"; };
+		093785962330C6F80054DCF1 /* UIFeatureTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFeatureTableCell.xib; sourceTree = "<group>"; };
+		093785972330C6F80054DCF1 /* UIFeatureTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFeatureTableCell.swift; sourceTree = "<group>"; };
+		093785982330C6F80054DCF1 /* UIFeatureSummaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFeatureSummaryView.xib; sourceTree = "<group>"; };
+		093785992330C6F80054DCF1 /* UIMultiWorkspaceListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIMultiWorkspaceListView.xib; sourceTree = "<group>"; };
+		0937859A2330C6F80054DCF1 /* UIFeatureSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFeatureSummaryView.swift; sourceTree = "<group>"; };
+		0937859C2330C6F80054DCF1 /* UIPagingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPagingTableView.swift; sourceTree = "<group>"; };
+		0937859D2330C6F80054DCF1 /* UIAutoRegisterTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAutoRegisterTableCell.swift; sourceTree = "<group>"; };
+		0937859E2330C6F80054DCF1 /* UINavigationBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarButton.swift; sourceTree = "<group>"; };
+		093785A12330C6F80054DCF1 /* UIFeaturePropertyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFeaturePropertyCell.swift; sourceTree = "<group>"; };
+		093785A32330C6F80054DCF1 /* UIFeaturePropertyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFeaturePropertyCell.xib; sourceTree = "<group>"; };
+		093785A42330C6F80054DCF1 /* UIFeatureDetailsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFeatureDetailsTableView.swift; sourceTree = "<group>"; };
+		093785EB23312D990054DCF1 /* UICountingListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICountingListView.swift; sourceTree = "<group>"; };
+		099B9D6F23585A64001332DE /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		09A271852359AC4E00B762ED /* MapHelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelpVC.swift; sourceTree = "<group>"; };
+		09A271862359AC4E00B762ED /* MapHelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapHelpVC.xib; sourceTree = "<group>"; };
+		09A30C3023D7341700F764D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		09A30C3223D738BE00F764D4 /* oneatlas.apikey */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oneatlas.apikey; sourceTree = "<group>"; };
+		09A30C3323D738BE00F764D4 /* mapbox.apikey */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mapbox.apikey; sourceTree = "<group>"; };
+		09A30C3923D742EA00F764D4 /* MapUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapUtils.swift; sourceTree = "<group>"; };
+		09A30C3A23D742EA00F764D4 /* MapboxEngineManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapboxEngineManager.swift; sourceTree = "<group>"; };
+		09A30C3B23D742EA00F764D4 /* MapEngineManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapEngineManager.swift; sourceTree = "<group>"; };
+		09A30C3C23D742EA00F764D4 /* MapEngineConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapEngineConfig.swift; sourceTree = "<group>"; };
+		09A30C4223D742FE00F764D4 /* AirbusFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirbusFonts.swift; sourceTree = "<group>"; };
+		09A30C4323D742FE00F764D4 /* AirbusColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirbusColors.swift; sourceTree = "<group>"; };
+		09DEDF8C2334F767005EA7EE /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		09DEE01F2335076B005EA7EE /* OneAtlasSampleApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OneAtlasSampleApp-Info.plist"; sourceTree = "<group>"; };
+		09F6DE1D2350671800B9E469 /* UIPassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPassthroughView.swift; sourceTree = "<group>"; };
+		09FD2E7F23324FFF004B31A4 /* BaseFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFilterVC.swift; sourceTree = "<group>"; };
+		09FD2E8423325A12004B31A4 /* UIWorkspaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWorkspaceListView.swift; sourceTree = "<group>"; };
+		09FD2E8623325AAD004B31A4 /* UIWorkspaceListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIWorkspaceListView.xib; sourceTree = "<group>"; };
+		1DCE586DB7544E1E60E2E5ED /* Pods_OneAtlasData_PREPROD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAtlasData_PREPROD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		433AC26BF44657845343C912 /* Pods-OneAtlasData-PROD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAtlasData-PROD.debug.xcconfig"; path = "Target Support Files/Pods-OneAtlasData-PROD/Pods-OneAtlasData-PROD.debug.xcconfig"; sourceTree = "<group>"; };
+		5E463140128C551F49FA371D /* Pods_OneAtlasData_INT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAtlasData_INT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6475591592085357DC952FF0 /* Pods-OneAtlasData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAtlasData.debug.xcconfig"; path = "Target Support Files/Pods-OneAtlasData/Pods-OneAtlasData.debug.xcconfig"; sourceTree = "<group>"; };
+		8B147962BB05720BFCFBA784 /* Pods-OneAtlasData-PROD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAtlasData-PROD.release.xcconfig"; path = "Target Support Files/Pods-OneAtlasData-PROD/Pods-OneAtlasData-PROD.release.xcconfig"; sourceTree = "<group>"; };
+		9DF72178FA9312187E686D1E /* Pods-OneAtlasSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAtlasSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-OneAtlasSampleApp/Pods-OneAtlasSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A5D799B497029E4308681899 /* Pods-OneAtlasData-INT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAtlasData-INT.debug.xcconfig"; path = "Target Support Files/Pods-OneAtlasData-INT/Pods-OneAtlasData-INT.debug.xcconfig"; sourceTree = "<group>"; };
+		BC3E6E40CF13567CEF4A0D39 /* Pods-OneAtlasData-INT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAtlasData-INT.release.xcconfig"; path = "Target Support Files/Pods-OneAtlasData-INT/Pods-OneAtlasData-INT.release.xcconfig"; sourceTree = "<group>"; };
+		CB79E67272C33EAE9FBB8FF8 /* Pods-OneAtlasData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAtlasData.release.xcconfig"; path = "Target Support Files/Pods-OneAtlasData/Pods-OneAtlasData.release.xcconfig"; sourceTree = "<group>"; };
+		E38D7C95F982EAF9C4F74499 /* Pods-OneAtlasData-PREPROD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAtlasData-PREPROD.release.xcconfig"; path = "Target Support Files/Pods-OneAtlasData-PREPROD/Pods-OneAtlasData-PREPROD.release.xcconfig"; sourceTree = "<group>"; };
+		EBF3046D2EF0ACE93DA4EAED /* Pods-OneAtlasData-PREPROD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAtlasData-PREPROD.debug.xcconfig"; path = "Target Support Files/Pods-OneAtlasData-PREPROD/Pods-OneAtlasData-PREPROD.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		093784CD2330C6310054DCF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6404E90CF4D78DF66655CC8F /* Pods_OneAtlasSampleApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		092F489E2332658E008002A3 /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				092F489F233265B6008002A3 /* OAUserAOI.swift */,
+				0937852F2330C6BC0054DCF1 /* SearchHistoryManager.swift */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		092F48B823338563008002A3 /* list */ = {
+			isa = PBXGroup;
+			children = (
+				09203BBE2354A1BC00C4E7DE /* UIUserAOITableCell.swift */,
+				09203BBF2354A1BC00C4E7DE /* UIUserAOITableCell.xib */,
+				093785972330C6F80054DCF1 /* UIFeatureTableCell.swift */,
+				093785962330C6F80054DCF1 /* UIFeatureTableCell.xib */,
+				093785942330C6F80054DCF1 /* UIMultiWorkspaceListView.swift */,
+				093785992330C6F80054DCF1 /* UIMultiWorkspaceListView.xib */,
+				09FD2E8423325A12004B31A4 /* UIWorkspaceListView.swift */,
+				09FD2E8623325AAD004B31A4 /* UIWorkspaceListView.xib */,
+				093785952330C6F80054DCF1 /* UIWorkspaceTableView.swift */,
+			);
+			path = list;
+			sourceTree = "<group>";
+		};
+		092F48C32333DE0D008002A3 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				092F48C42333DE29008002A3 /* UISearchDrawerCell.swift */,
+				092F48C52333DE29008002A3 /* UISearchDrawerCell.xib */,
+				090B6CFC2338B50E00983E87 /* UISearchDrawerHeader.swift */,
+				090B6D002338B53900983E87 /* UISearchDrawerHeader.xib */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		093784C72330C6310054DCF1 = {
+			isa = PBXGroup;
+			children = (
+				093784D22330C6310054DCF1 /* OneAtlasSampleApp */,
+				093784D12330C6310054DCF1 /* Products */,
+				5767AACE48F02096B6A88270 /* Pods */,
+				E3FB40850758C0DB76CCBAEE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		093784D12330C6310054DCF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				093784D02330C6310054DCF1 /* OneAtlasSampleApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		093784D22330C6310054DCF1 /* OneAtlasSampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				093784D32330C6310054DCF1 /* AppDelegate.swift */,
+				09A30C3723D7426900F764D4 /* airbusui */,
+				093785012330C6A60054DCF1 /* auth */,
+				093785042330C6B30054DCF1 /* config */,
+				093785092330C6BC0054DCF1 /* controllers */,
+				0937856B2330C6C10054DCF1 /* data */,
+				092F489E2332658E008002A3 /* entities */,
+				09A30C3623D7425B00F764D4 /* mapengine */,
+				093785722330C6EE0054DCF1 /* utils */,
+				093785812330C6F80054DCF1 /* views */,
+				093784DA2330C6320054DCF1 /* Assets.xcassets */,
+				099B9D6F23585A64001332DE /* LaunchScreen.xib */,
+				09A30C2F23D7341700F764D4 /* Localizable.strings */,
+				09DEE01F2335076B005EA7EE /* OneAtlasSampleApp-Info.plist */,
+			);
+			path = OneAtlasSampleApp;
+			sourceTree = "<group>";
+		};
+		093785012330C6A60054DCF1 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				09DEDF8C2334F767005EA7EE /* UserManager.swift */,
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
+		093785042330C6B30054DCF1 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				093785052330C6B30054DCF1 /* Config.swift */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		093785092330C6BC0054DCF1 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				09FD2E8123325006004B31A4 /* base */,
+				0937851D2330C6BC0054DCF1 /* map */,
+				0937850C2330C6BC0054DCF1 /* splash */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		0937850C2330C6BC0054DCF1 /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				0937850D2330C6BC0054DCF1 /* SplashVC.swift */,
+				0937850E2330C6BC0054DCF1 /* SplashVC.xib */,
+			);
+			path = splash;
+			sourceTree = "<group>";
+		};
+		0937851D2330C6BC0054DCF1 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				093785242330C6BC0054DCF1 /* drawers */,
+				093785212330C6BC0054DCF1 /* MapVC.swift */,
+				0937851E2330C6BC0054DCF1 /* MapVC.xib */,
+				09A271852359AC4E00B762ED /* MapHelpVC.swift */,
+				09A271862359AC4E00B762ED /* MapHelpVC.xib */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
+		093785242330C6BC0054DCF1 /* drawers */ = {
+			isa = PBXGroup;
+			children = (
+				093785262330C6BC0054DCF1 /* search */,
+				093785252330C6BC0054DCF1 /* BaseDrawerVC.swift */,
+				093785352330C6BC0054DCF1 /* DrawerManager.swift */,
+			);
+			path = drawers;
+			sourceTree = "<group>";
+		};
+		093785262330C6BC0054DCF1 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				093785282330C6BC0054DCF1 /* FeatureDetailsDrawerVC.swift */,
+				093785292330C6BC0054DCF1 /* FeatureDetailsDrawerVC.xib */,
+				0937852B2330C6BC0054DCF1 /* SearchDrawerVC.swift */,
+				0937852E2330C6BC0054DCF1 /* SearchDrawerVC.xib */,
+				0937852A2330C6BC0054DCF1 /* SearchResultsDrawerVC.swift */,
+				093785272330C6BC0054DCF1 /* SearchResultsDrawerVC.xib */,
+				0937852D2330C6BC0054DCF1 /* SearchResultsFilterVC.swift */,
+				0937852C2330C6BC0054DCF1 /* SearchResultsFilterVC.xib */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		0937856B2330C6C10054DCF1 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				09A30C3323D738BE00F764D4 /* mapbox.apikey */,
+				09A30C3223D738BE00F764D4 /* oneatlas.apikey */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		093785722330C6EE0054DCF1 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				093785732330C6EE0054DCF1 /* CacheUtils.swift */,
+				093785752330C6EE0054DCF1 /* DateUtils.swift */,
+				093785742330C6EE0054DCF1 /* GeoUtils.swift */,
+				093785772330C6EE0054DCF1 /* MiscUtils.swift */,
+				093785782330C6EE0054DCF1 /* OneAtlasUtils.swift */,
+				093785792330C6EE0054DCF1 /* ToastUtils.swift */,
+				093785762330C6EE0054DCF1 /* XibUtils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		093785812330C6F80054DCF1 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				0937859B2330C6F80054DCF1 /* common */,
+				0937859F2330C6F80054DCF1 /* map */,
+				092F48C32333DE0D008002A3 /* search */,
+				093785932330C6F80054DCF1 /* workspace */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		093785932330C6F80054DCF1 /* workspace */ = {
+			isa = PBXGroup;
+			children = (
+				092F48B823338563008002A3 /* list */,
+			);
+			path = workspace;
+			sourceTree = "<group>";
+		};
+		0937859B2330C6F80054DCF1 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				0937859D2330C6F80054DCF1 /* UIAutoRegisterTableCell.swift */,
+				093785872330C6F80054DCF1 /* UICardFooterView.swift */,
+				093785892330C6F80054DCF1 /* UICardHeaderView.swift */,
+				093785852330C6F80054DCF1 /* UICardHeaderView.xib */,
+				093785EB23312D990054DCF1 /* UICountingListView.swift */,
+				0937859E2330C6F80054DCF1 /* UINavigationBarButton.swift */,
+				0937859C2330C6F80054DCF1 /* UIPagingTableView.swift */,
+				09F6DE1D2350671800B9E469 /* UIPassthroughView.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		0937859F2330C6F80054DCF1 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				093785A42330C6F80054DCF1 /* UIFeatureDetailsTableView.swift */,
+				093785A12330C6F80054DCF1 /* UIFeaturePropertyCell.swift */,
+				093785A32330C6F80054DCF1 /* UIFeaturePropertyCell.xib */,
+				0937859A2330C6F80054DCF1 /* UIFeatureSummaryView.swift */,
+				093785982330C6F80054DCF1 /* UIFeatureSummaryView.xib */,
+				09203BC62355CF5600C4E7DE /* UIFloatingMapButton.swift */,
+				093785322330C6BC0054DCF1 /* UILayerCollectionCell.swift */,
+				093785342330C6BC0054DCF1 /* UILayerCollectionCell.xib */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
+		09A30C3623D7425B00F764D4 /* mapengine */ = {
+			isa = PBXGroup;
+			children = (
+				09A30C3A23D742EA00F764D4 /* MapboxEngineManager.swift */,
+				09A30C3C23D742EA00F764D4 /* MapEngineConfig.swift */,
+				09A30C3B23D742EA00F764D4 /* MapEngineManager.swift */,
+				09A30C3923D742EA00F764D4 /* MapUtils.swift */,
+			);
+			path = mapengine;
+			sourceTree = "<group>";
+		};
+		09A30C3723D7426900F764D4 /* airbusui */ = {
+			isa = PBXGroup;
+			children = (
+				09A30C4323D742FE00F764D4 /* AirbusColors.swift */,
+				09A30C4223D742FE00F764D4 /* AirbusFonts.swift */,
+			);
+			path = airbusui;
+			sourceTree = "<group>";
+		};
+		09FD2E8123325006004B31A4 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				09FD2E7F23324FFF004B31A4 /* BaseFilterVC.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		5767AACE48F02096B6A88270 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6475591592085357DC952FF0 /* Pods-OneAtlasData.debug.xcconfig */,
+				CB79E67272C33EAE9FBB8FF8 /* Pods-OneAtlasData.release.xcconfig */,
+				A5D799B497029E4308681899 /* Pods-OneAtlasData-INT.debug.xcconfig */,
+				BC3E6E40CF13567CEF4A0D39 /* Pods-OneAtlasData-INT.release.xcconfig */,
+				EBF3046D2EF0ACE93DA4EAED /* Pods-OneAtlasData-PREPROD.debug.xcconfig */,
+				E38D7C95F982EAF9C4F74499 /* Pods-OneAtlasData-PREPROD.release.xcconfig */,
+				433AC26BF44657845343C912 /* Pods-OneAtlasData-PROD.debug.xcconfig */,
+				8B147962BB05720BFCFBA784 /* Pods-OneAtlasData-PROD.release.xcconfig */,
+				9DF72178FA9312187E686D1E /* Pods-OneAtlasSampleApp.debug.xcconfig */,
+				05261641F40D1CCD98B9AEA2 /* Pods-OneAtlasSampleApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E3FB40850758C0DB76CCBAEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E463140128C551F49FA371D /* Pods_OneAtlasData_INT.framework */,
+				1DCE586DB7544E1E60E2E5ED /* Pods_OneAtlasData_PREPROD.framework */,
+				0326FBD1154023874D590FB8 /* Pods_OneAtlasSampleApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		093784CF2330C6310054DCF1 /* OneAtlasSampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 093784F82330C6320054DCF1 /* Build configuration list for PBXNativeTarget "OneAtlasSampleApp" */;
+			buildPhases = (
+				B4092472A39DAD389C3BFE88 /* [CP] Check Pods Manifest.lock */,
+				093784CC2330C6310054DCF1 /* Sources */,
+				093784CD2330C6310054DCF1 /* Frameworks */,
+				093784CE2330C6310054DCF1 /* Resources */,
+				FFA30AEC78689923B44FB304 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneAtlasSampleApp;
+			productName = OneAtlasData;
+			productReference = 093784D02330C6310054DCF1 /* OneAtlasSampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		093784C82330C6310054DCF1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Airbus DS";
+				TargetAttributes = {
+					093784CF2330C6310054DCF1 = {
+						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 093784CB2330C6310054DCF1 /* Build configuration list for PBXProject "OneAtlasSampleApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 093784C72330C6310054DCF1;
+			productRefGroup = 093784D12330C6310054DCF1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				093784CF2330C6310054DCF1 /* OneAtlasSampleApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		093784CE2330C6310054DCF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				093785592330C6BC0054DCF1 /* SearchResultsFilterVC.xib in Resources */,
+				09203BC52354A1BC00C4E7DE /* UIUserAOITableCell.xib in Resources */,
+				093785B82330C6F80054DCF1 /* UIFeatureSummaryView.xib in Resources */,
+				093785C12330C6F80054DCF1 /* UIFeaturePropertyCell.xib in Resources */,
+				09A30C3123D7341700F764D4 /* Localizable.strings in Resources */,
+				093785542330C6BC0054DCF1 /* SearchResultsDrawerVC.xib in Resources */,
+				093785422330C6BC0054DCF1 /* SplashVC.xib in Resources */,
+				090B6D032338B53900983E87 /* UISearchDrawerHeader.xib in Resources */,
+				09A2718C2359AC4E00B762ED /* MapHelpVC.xib in Resources */,
+				093784DB2330C6320054DCF1 /* Assets.xcassets in Resources */,
+				092F48C72333DE29008002A3 /* UISearchDrawerCell.xib in Resources */,
+				093785B62330C6F80054DCF1 /* UIFeatureTableCell.xib in Resources */,
+				09A30C3523D738BE00F764D4 /* mapbox.apikey in Resources */,
+				093785B92330C6F80054DCF1 /* UIMultiWorkspaceListView.xib in Resources */,
+				093785602330C6BC0054DCF1 /* UILayerCollectionCell.xib in Resources */,
+				0937855B2330C6BC0054DCF1 /* SearchDrawerVC.xib in Resources */,
+				0937854D2330C6BC0054DCF1 /* MapVC.xib in Resources */,
+				09A30C3423D738BE00F764D4 /* oneatlas.apikey in Resources */,
+				09FD2E8723325AAD004B31A4 /* UIWorkspaceListView.xib in Resources */,
+				099B9D7223585A64001332DE /* LaunchScreen.xib in Resources */,
+				093785A72330C6F80054DCF1 /* UICardHeaderView.xib in Resources */,
+				093785562330C6BC0054DCF1 /* FeatureDetailsDrawerVC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B4092472A39DAD389C3BFE88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneAtlasSampleApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFA30AEC78689923B44FB304 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OneAtlasSampleApp/Pods-OneAtlasSampleApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OneAtlasSampleApp/Pods-OneAtlasSampleApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OneAtlasSampleApp/Pods-OneAtlasSampleApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		093784CC2330C6310054DCF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09A30C4123D742EA00F764D4 /* MapEngineConfig.swift in Sources */,
+				093785612330C6BC0054DCF1 /* DrawerManager.swift in Sources */,
+				092F48C62333DE29008002A3 /* UISearchDrawerCell.swift in Sources */,
+				09FD2E8023324FFF004B31A4 /* BaseFilterVC.swift in Sources */,
+				09DEDF8D2334F767005EA7EE /* UserManager.swift in Sources */,
+				093785BD2330C6F80054DCF1 /* UINavigationBarButton.swift in Sources */,
+				093785572330C6BC0054DCF1 /* SearchResultsDrawerVC.swift in Sources */,
+				093784D42330C6310054DCF1 /* AppDelegate.swift in Sources */,
+				093785B52330C6F80054DCF1 /* UIWorkspaceTableView.swift in Sources */,
+				093785BA2330C6F80054DCF1 /* UIFeatureSummaryView.swift in Sources */,
+				0937857D2330C6EE0054DCF1 /* XibUtils.swift in Sources */,
+				09A30C4523D742FE00F764D4 /* AirbusColors.swift in Sources */,
+				0937857F2330C6EE0054DCF1 /* OneAtlasUtils.swift in Sources */,
+				0937857A2330C6EE0054DCF1 /* CacheUtils.swift in Sources */,
+				093785072330C6B30054DCF1 /* Config.swift in Sources */,
+				093785582330C6BC0054DCF1 /* SearchDrawerVC.swift in Sources */,
+				093785552330C6BC0054DCF1 /* FeatureDetailsDrawerVC.swift in Sources */,
+				09203BCC2355D17800C4E7DE /* UIFloatingMapButton.swift in Sources */,
+				09A30C3E23D742EA00F764D4 /* MapUtils.swift in Sources */,
+				0937857E2330C6EE0054DCF1 /* MiscUtils.swift in Sources */,
+				0937855E2330C6BC0054DCF1 /* UILayerCollectionCell.swift in Sources */,
+				093785BF2330C6F80054DCF1 /* UIFeaturePropertyCell.swift in Sources */,
+				093785BC2330C6F80054DCF1 /* UIAutoRegisterTableCell.swift in Sources */,
+				09A271892359AC4E00B762ED /* MapHelpVC.swift in Sources */,
+				0937857B2330C6EE0054DCF1 /* GeoUtils.swift in Sources */,
+				09FD2E8523325A12004B31A4 /* UIWorkspaceListView.swift in Sources */,
+				093785AB2330C6F80054DCF1 /* UICardHeaderView.swift in Sources */,
+				0937857C2330C6EE0054DCF1 /* DateUtils.swift in Sources */,
+				093785502330C6BC0054DCF1 /* MapVC.swift in Sources */,
+				090B6CFF2338B50E00983E87 /* UISearchDrawerHeader.swift in Sources */,
+				093785B72330C6F80054DCF1 /* UIFeatureTableCell.swift in Sources */,
+				093785B42330C6F80054DCF1 /* UIMultiWorkspaceListView.swift in Sources */,
+				09A30C4023D742EA00F764D4 /* MapEngineManager.swift in Sources */,
+				09A30C3F23D742EA00F764D4 /* MapboxEngineManager.swift in Sources */,
+				0937855A2330C6BC0054DCF1 /* SearchResultsFilterVC.swift in Sources */,
+				093785802330C6EE0054DCF1 /* ToastUtils.swift in Sources */,
+				09F6DE202350671E00B9E469 /* UIPassthroughView.swift in Sources */,
+				093785532330C6BC0054DCF1 /* BaseDrawerVC.swift in Sources */,
+				09203BC22354A1BC00C4E7DE /* UIUserAOITableCell.swift in Sources */,
+				092F48A0233265B6008002A3 /* OAUserAOI.swift in Sources */,
+				093785A92330C6F80054DCF1 /* UICardFooterView.swift in Sources */,
+				093785BB2330C6F80054DCF1 /* UIPagingTableView.swift in Sources */,
+				093785C22330C6F80054DCF1 /* UIFeatureDetailsTableView.swift in Sources */,
+				09A30C4423D742FE00F764D4 /* AirbusFonts.swift in Sources */,
+				093785EC23312D990054DCF1 /* UICountingListView.swift in Sources */,
+				0937855C2330C6BC0054DCF1 /* SearchHistoryManager.swift in Sources */,
+				093785412330C6BC0054DCF1 /* SplashVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		09A30C2F23D7341700F764D4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09A30C3023D7341700F764D4 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		093784F62330C6320054DCF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		093784F72330C6320054DCF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		093784F92330C6320054DCF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DF72178FA9312187E686D1E /* Pods-OneAtlasSampleApp.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YYTG85CH8Y;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/OneAtlasSampleApp/OneAtlasSampleApp-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				ONEATLAS_LOGIN_URL = "https://authenticate.oneatlas.airbus.com";
+				ONEATLAS_PORTAL_URL = "https://oneatlas.airbus.com";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D TARGET_PROD";
+				PRODUCT_BUNDLE_IDENTIFIER = com.airbus.oneatlas.ios.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		093784FA2330C6320054DCF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05261641F40D1CCD98B9AEA2 /* Pods-OneAtlasSampleApp.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YYTG85CH8Y;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/OneAtlasSampleApp/OneAtlasSampleApp-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				ONEATLAS_LOGIN_URL = "https://authenticate.oneatlas.airbus.com";
+				ONEATLAS_PORTAL_URL = "https://oneatlas.airbus.com";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D TARGET_PROD";
+				PRODUCT_BUNDLE_IDENTIFIER = com.airbus.oneatlas.ios.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		093784CB2330C6310054DCF1 /* Build configuration list for PBXProject "OneAtlasSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				093784F62330C6320054DCF1 /* Debug */,
+				093784F72330C6320054DCF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		093784F82330C6320054DCF1 /* Build configuration list for PBXNativeTarget "OneAtlasSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				093784F92330C6320054DCF1 /* Debug */,
+				093784FA2330C6320054DCF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 093784C82330C6310054DCF1 /* Project object */;
+}

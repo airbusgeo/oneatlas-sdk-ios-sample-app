@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeatureDetailsDrawerVC" customModule="OneAtlasSampleApp" customModuleProvider="target">
+            <connections>
+                <outlet property="btCancel" destination="ptv-no-xSX" id="BRz-Ux-kbQ"/>
+                <outlet property="gripperView" destination="Waw-v1-jeO" id="M3s-ND-th6"/>
+                <outlet property="tvProductFeature" destination="g19-zg-we1" id="Vrh-Rq-2Np"/>
+                <outlet property="uvFeature" destination="Yf9-L5-oqd" id="lwa-HK-w56"/>
+                <outlet property="uvHeader" destination="g9a-ew-wDB" id="MOu-hl-sSt"/>
+                <outlet property="view" destination="qsR-dr-yWN" id="1sT-u4-2fH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="qsR-dr-yWN">
+            <rect key="frame" x="0.0" y="0.0" width="424" height="892"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Woq-Qp-NWa">
+                    <rect key="frame" x="0.0" y="0.0" width="424" height="868"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9a-ew-wDB">
+                            <rect key="frame" x="0.0" y="0.0" width="424" height="96"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yf9-L5-oqd" customClass="UIFeatureSummaryView" customModule="OneAtlasSampleApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="8" width="424" height="80"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptv-no-xSX">
+                                    <rect key="frame" x="384" y="8" width="32" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="ptv-no-xSX" secondAttribute="height" multiplier="1:1" id="Vgj-GZ-qTk"/>
+                                        <constraint firstAttribute="height" constant="32" id="fHM-A3-2s8"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                    <state key="normal" image="baseline_cancel_black_24pt"/>
+                                    <connections>
+                                        <action selector="onCancelClicked:" destination="-1" eventType="touchUpInside" id="E0x-99-bw7"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Yf9-L5-oqd" firstAttribute="width" secondItem="g9a-ew-wDB" secondAttribute="width" id="ADU-Uc-5B8"/>
+                                <constraint firstAttribute="trailing" secondItem="ptv-no-xSX" secondAttribute="trailing" constant="8" id="JwR-hR-1fM"/>
+                                <constraint firstAttribute="bottom" secondItem="Yf9-L5-oqd" secondAttribute="bottom" constant="8" id="Mud-0r-rs3"/>
+                                <constraint firstItem="Yf9-L5-oqd" firstAttribute="top" secondItem="g9a-ew-wDB" secondAttribute="top" constant="8" id="ZId-uq-Ljz"/>
+                                <constraint firstItem="ptv-no-xSX" firstAttribute="top" secondItem="g9a-ew-wDB" secondAttribute="top" constant="8" id="bGT-gb-agg"/>
+                                <constraint firstItem="Yf9-L5-oqd" firstAttribute="centerX" secondItem="g9a-ew-wDB" secondAttribute="centerX" id="eAh-c3-RWM"/>
+                                <constraint firstAttribute="height" constant="96" id="hew-aQ-ka6"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="68" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="g19-zg-we1" customClass="UIFeatureDetailsTableView" customModule="OneAtlasSampleApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="96" width="424" height="752"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="992-14-2U5"/>
+                                <outlet property="delegate" destination="-1" id="YiX-VJ-y2A"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="g19-zg-we1" secondAttribute="trailing" id="Fcf-N1-4EW"/>
+                        <constraint firstAttribute="trailing" secondItem="g9a-ew-wDB" secondAttribute="trailing" id="Rf6-TD-zjN"/>
+                        <constraint firstItem="g9a-ew-wDB" firstAttribute="leading" secondItem="Woq-Qp-NWa" secondAttribute="leading" id="TBC-rp-e50"/>
+                        <constraint firstItem="g9a-ew-wDB" firstAttribute="top" secondItem="Woq-Qp-NWa" secondAttribute="top" id="a52-p5-Jge"/>
+                        <constraint firstItem="g19-zg-we1" firstAttribute="leading" secondItem="Woq-Qp-NWa" secondAttribute="leading" id="c6G-vb-Xmq"/>
+                        <constraint firstItem="g19-zg-we1" firstAttribute="top" secondItem="Yf9-L5-oqd" secondAttribute="bottom" constant="8" id="kaf-DV-xs3"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Waw-v1-jeO">
+                    <rect key="frame" x="194" y="6" width="36" height="5"/>
+                    <color key="backgroundColor" red="0.72941176470000002" green="0.72549019609999998" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="T46-0l-xrP"/>
+                        <constraint firstAttribute="width" constant="36" id="lnN-kR-BJR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Waw-v1-jeO" firstAttribute="top" secondItem="g9a-ew-wDB" secondAttribute="top" constant="6" id="B5b-qb-m8q"/>
+                <constraint firstItem="Woq-Qp-NWa" firstAttribute="leading" secondItem="Xkh-79-AqU" secondAttribute="leading" id="F6u-jz-bBA"/>
+                <constraint firstItem="Waw-v1-jeO" firstAttribute="centerX" secondItem="Xkh-79-AqU" secondAttribute="centerX" id="XPb-d4-R05"/>
+                <constraint firstAttribute="bottomMargin" secondItem="Woq-Qp-NWa" secondAttribute="bottom" constant="-10" id="aCT-5p-BpN"/>
+                <constraint firstItem="Woq-Qp-NWa" firstAttribute="top" secondItem="qsR-dr-yWN" secondAttribute="top" id="gCW-v9-ThO"/>
+                <constraint firstItem="Xkh-79-AqU" firstAttribute="trailing" secondItem="Woq-Qp-NWa" secondAttribute="trailing" id="lE9-2h-5DG"/>
+                <constraint firstAttribute="bottom" secondItem="g19-zg-we1" secondAttribute="bottom" priority="751" constant="44" id="rSO-UF-lOa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Xkh-79-AqU"/>
+            <point key="canvasLocation" x="200.00000000000003" y="-392.41071428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="baseline_cancel_black_24pt" width="24" height="24"/>
+    </resources>
+</document>

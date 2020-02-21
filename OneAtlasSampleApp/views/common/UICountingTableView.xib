@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UICountingTableView" customModule="OneAtlasData" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="Dns-b1-iNe" id="xGS-5E-9E4"/>
+                <outlet property="lbCount" destination="3QK-RU-vMa" id="a01-5n-7XW"/>
+                <outlet property="tvResults" destination="J9z-Ie-Gdy" id="htg-SI-b0o"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Dns-b1-iNe">
+            <rect key="frame" x="0.0" y="0.0" width="681" height="629"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKA-go-Ohw">
+                    <rect key="frame" x="0.0" y="0.0" width="681" height="629"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuH-Q1-Oq1">
+                            <rect key="frame" x="0.0" y="0.0" width="681" height="32"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QK-RU-vMa">
+                                    <rect key="frame" x="325" y="8" width="31" height="16"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="16" id="pOy-nE-mgG"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="3QK-RU-vMa" firstAttribute="centerX" secondItem="AuH-Q1-Oq1" secondAttribute="centerX" id="41F-Zf-uYy"/>
+                                <constraint firstAttribute="bottom" secondItem="3QK-RU-vMa" secondAttribute="bottom" constant="8" id="qji-4R-IGo"/>
+                                <constraint firstItem="3QK-RU-vMa" firstAttribute="top" secondItem="AuH-Q1-Oq1" secondAttribute="top" constant="8" id="vx3-Cx-9T9"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J9z-Ie-Gdy" customClass="UIPagingTableView" customModule="OneAtlasData" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="32" width="681" height="597"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="J9z-Ie-Gdy" firstAttribute="top" secondItem="AuH-Q1-Oq1" secondAttribute="bottom" id="2oN-uU-epI"/>
+                        <constraint firstItem="AuH-Q1-Oq1" firstAttribute="top" secondItem="IKA-go-Ohw" secondAttribute="top" id="3tW-xr-Mqn"/>
+                        <constraint firstItem="AuH-Q1-Oq1" firstAttribute="centerX" secondItem="IKA-go-Ohw" secondAttribute="centerX" id="Ck3-dl-4uy"/>
+                        <constraint firstItem="AuH-Q1-Oq1" firstAttribute="width" secondItem="IKA-go-Ohw" secondAttribute="width" id="KxP-4E-Geb"/>
+                        <constraint firstItem="J9z-Ie-Gdy" firstAttribute="centerX" secondItem="IKA-go-Ohw" secondAttribute="centerX" id="Oa7-tv-XsP"/>
+                        <constraint firstAttribute="bottom" secondItem="J9z-Ie-Gdy" secondAttribute="bottom" id="dYg-cr-liJ"/>
+                        <constraint firstItem="J9z-Ie-Gdy" firstAttribute="width" secondItem="IKA-go-Ohw" secondAttribute="width" id="g15-iF-Qrf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="IKA-go-Ohw" firstAttribute="height" secondItem="Dns-b1-iNe" secondAttribute="height" id="0xn-uo-LKz"/>
+                <constraint firstItem="IKA-go-Ohw" firstAttribute="width" secondItem="Dns-b1-iNe" secondAttribute="width" id="GPV-oP-qj9"/>
+                <constraint firstItem="IKA-go-Ohw" firstAttribute="centerY" secondItem="Dns-b1-iNe" secondAttribute="centerY" id="nq5-4D-fVc"/>
+                <constraint firstItem="IKA-go-Ohw" firstAttribute="centerX" secondItem="Dns-b1-iNe" secondAttribute="centerX" id="qTS-L3-wt5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="kDn-IP-saG"/>
+            <point key="canvasLocation" x="58.695652173913047" y="-41.183035714285715"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UIFeatureTableCell" rowHeight="120" id="KrX-Zc-FgS" customClass="UIFeatureTableCell" customModule="OneAtlasData_INT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KrX-Zc-FgS" id="ARm-ap-gmZ">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="95.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2l-gC-zlp" customClass="UIFeatureSummaryView" customModule="OneAtlasData_INT" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="95.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWc-cJ-4G7">
+                        <rect key="frame" x="0.0" y="94.5" width="414" height="1"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="lf8-bb-UxV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="lWc-cJ-4G7" firstAttribute="width" secondItem="ARm-ap-gmZ" secondAttribute="width" id="6sP-4N-jwn"/>
+                    <constraint firstItem="w2l-gC-zlp" firstAttribute="centerX" secondItem="ARm-ap-gmZ" secondAttribute="centerX" id="9eP-sf-MbF"/>
+                    <constraint firstItem="w2l-gC-zlp" firstAttribute="width" secondItem="ARm-ap-gmZ" secondAttribute="width" id="D9v-pb-aWB"/>
+                    <constraint firstItem="lWc-cJ-4G7" firstAttribute="centerX" secondItem="ARm-ap-gmZ" secondAttribute="centerX" id="kQ1-LB-rZK"/>
+                    <constraint firstItem="w2l-gC-zlp" firstAttribute="centerY" secondItem="ARm-ap-gmZ" secondAttribute="centerY" id="lVr-3R-48W"/>
+                    <constraint firstAttribute="bottom" secondItem="lWc-cJ-4G7" secondAttribute="bottom" id="lvw-4e-gxw"/>
+                    <constraint firstItem="w2l-gC-zlp" firstAttribute="height" secondItem="ARm-ap-gmZ" secondAttribute="height" id="yKP-ME-Bxj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="uvFeature" destination="w2l-gC-zlp" id="8GZ-XA-7bJ"/>
+                <outlet property="uvSeparator" destination="lWc-cJ-4G7" id="VGv-1n-Ldm"/>
+            </connections>
+            <point key="canvasLocation" x="-428" y="-36"/>
+        </tableViewCell>
+    </objects>
+</document>

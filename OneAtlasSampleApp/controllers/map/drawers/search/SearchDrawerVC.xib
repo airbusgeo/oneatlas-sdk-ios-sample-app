@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchDrawerVC" customModule="OneAtlasData_INT" customModuleProvider="target">
+            <connections>
+                <outlet property="gripperTopConstraint" destination="6ix-96-oMZ" id="BU8-Hz-CYX"/>
+                <outlet property="gripperView" destination="Mf1-zo-Hgx" id="UI7-Ej-6Vf"/>
+                <outlet property="searchBar" destination="jF2-P7-8rs" id="z8t-YW-988"/>
+                <outlet property="tableView" destination="gNL-ak-VXD" id="JNt-lU-bsd"/>
+                <outlet property="uvHeader" destination="HRw-6G-5Rp" id="Nr9-eG-0Gw"/>
+                <outlet property="view" destination="DnS-nY-yDG" id="r3j-lq-RFl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="DnS-nY-yDG">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="egd-qm-8cg">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="872"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRw-6G-5Rp">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search location, coordinates..." translatesAutoresizingMaskIntoConstraints="NO" id="jF2-P7-8rs">
+                                    <rect key="frame" x="0.0" y="6" width="414" height="56"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="GGJ-el-14I"/>
+                                    </connections>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="jF2-P7-8rs" secondAttribute="trailing" id="FLm-9e-t8h"/>
+                                <constraint firstAttribute="height" priority="750" constant="68" id="Jmf-mT-xko"/>
+                                <constraint firstItem="jF2-P7-8rs" firstAttribute="leading" secondItem="HRw-6G-5Rp" secondAttribute="leading" id="m8E-l8-EDQ"/>
+                                <constraint firstItem="jF2-P7-8rs" firstAttribute="top" secondItem="HRw-6G-5Rp" secondAttribute="top" constant="6" id="wph-LX-iBY"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gNL-ak-VXD">
+                            <rect key="frame" x="0.0" y="68" width="414" height="808"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="8hC-36-RVq"/>
+                                <outlet property="delegate" destination="-1" id="xZx-4O-Elu"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="gNL-ak-VXD" firstAttribute="top" secondItem="HRw-6G-5Rp" secondAttribute="bottom" id="CbB-Ek-pqZ"/>
+                        <constraint firstItem="gNL-ak-VXD" firstAttribute="leading" secondItem="egd-qm-8cg" secondAttribute="leading" id="Cyv-vm-je2"/>
+                        <constraint firstItem="HRw-6G-5Rp" firstAttribute="leading" secondItem="egd-qm-8cg" secondAttribute="leading" id="MdC-C2-kAC"/>
+                        <constraint firstAttribute="trailing" secondItem="HRw-6G-5Rp" secondAttribute="trailing" id="Q9N-2n-Ybq"/>
+                        <constraint firstItem="HRw-6G-5Rp" firstAttribute="top" secondItem="egd-qm-8cg" secondAttribute="top" id="VaT-J1-tt7"/>
+                        <constraint firstAttribute="trailing" secondItem="gNL-ak-VXD" secondAttribute="trailing" id="gy3-Mh-S0k"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mf1-zo-Hgx">
+                    <rect key="frame" x="189" y="6" width="36" height="5"/>
+                    <color key="backgroundColor" red="0.72941176470000002" green="0.72549019609999998" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="jV1-3i-Ktg"/>
+                        <constraint firstAttribute="width" constant="36" id="p6c-8X-bwX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Mf1-zo-Hgx" firstAttribute="top" secondItem="HRw-6G-5Rp" secondAttribute="top" constant="6" id="6ix-96-oMZ"/>
+                <constraint firstItem="egd-qm-8cg" firstAttribute="leading" secondItem="EnG-06-Kbe" secondAttribute="leading" id="7GT-ii-NHb"/>
+                <constraint firstAttribute="bottomMargin" secondItem="egd-qm-8cg" secondAttribute="bottom" constant="-10" id="hGD-6Q-KkP"/>
+                <constraint firstItem="Mf1-zo-Hgx" firstAttribute="top" secondItem="gNL-ak-VXD" secondAttribute="bottom" priority="750" constant="8" id="kg5-jS-onS"/>
+                <constraint firstAttribute="bottom" secondItem="gNL-ak-VXD" secondAttribute="bottom" priority="751" constant="20" id="pLQ-J8-rNF"/>
+                <constraint firstItem="Mf1-zo-Hgx" firstAttribute="centerX" secondItem="EnG-06-Kbe" secondAttribute="centerX" id="qlE-1l-tMD"/>
+                <constraint firstItem="egd-qm-8cg" firstAttribute="top" secondItem="DnS-nY-yDG" secondAttribute="top" id="rfO-Zz-wyO"/>
+                <constraint firstItem="EnG-06-Kbe" firstAttribute="trailing" secondItem="egd-qm-8cg" secondAttribute="trailing" id="tfm-8x-hbZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="EnG-06-Kbe"/>
+        </view>
+    </objects>
+</document>

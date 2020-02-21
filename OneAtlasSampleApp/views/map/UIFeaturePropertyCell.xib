@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UIFeaturePropertyCell" rowHeight="60" id="EhI-HZ-Fmy" customClass="UIFeaturePropertyCell" customModule="OneAtlasData_INT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EhI-HZ-Fmy" id="xr6-MT-iex">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XAV-93-WoQ">
+                        <rect key="frame" x="16" y="3" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="XAV-93-WoQ" secondAttribute="height" multiplier="1:1" id="3t2-gX-OwA"/>
+                            <constraint firstAttribute="width" constant="16" id="vh8-2C-Dqh"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQI-di-qhm">
+                        <rect key="frame" x="40" y="0.0" width="318" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="uc0-9w-pvd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DS_PHR1B_201907070346434_TH1_PX_E103N01_0219_02841" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awl-et-A4a">
+                        <rect key="frame" x="48" y="22" width="310" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="awl-et-A4a" firstAttribute="top" secondItem="QQI-di-qhm" secondAttribute="bottom" id="BJO-2p-9yH"/>
+                    <constraint firstAttribute="bottom" secondItem="awl-et-A4a" secondAttribute="bottom" id="QGr-Fk-0W5"/>
+                    <constraint firstAttribute="trailing" secondItem="awl-et-A4a" secondAttribute="trailing" constant="16" id="f7e-8K-vDt"/>
+                    <constraint firstItem="QQI-di-qhm" firstAttribute="top" secondItem="xr6-MT-iex" secondAttribute="top" id="fAo-k2-SE8"/>
+                    <constraint firstItem="XAV-93-WoQ" firstAttribute="centerY" secondItem="QQI-di-qhm" secondAttribute="centerY" id="j9i-v8-lhx"/>
+                    <constraint firstItem="awl-et-A4a" firstAttribute="height" secondItem="QQI-di-qhm" secondAttribute="height" id="k3Y-Oa-jll"/>
+                    <constraint firstAttribute="trailing" secondItem="QQI-di-qhm" secondAttribute="trailing" constant="16" id="lHh-tj-teM"/>
+                    <constraint firstItem="awl-et-A4a" firstAttribute="leading" secondItem="XAV-93-WoQ" secondAttribute="trailing" constant="16" id="mDc-ah-ibm"/>
+                    <constraint firstItem="XAV-93-WoQ" firstAttribute="leading" secondItem="xr6-MT-iex" secondAttribute="leading" constant="16" id="svB-5i-m4K"/>
+                    <constraint firstItem="QQI-di-qhm" firstAttribute="leading" secondItem="XAV-93-WoQ" secondAttribute="trailing" constant="8" id="y5u-dR-dXq"/>
+                    <constraint firstItem="XAV-93-WoQ" firstAttribute="width" secondItem="XAV-93-WoQ" secondAttribute="height" multiplier="1:1" id="zqT-a8-XiY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="ivIcon" destination="XAV-93-WoQ" id="Ipw-uc-wdc"/>
+                <outlet property="lbName" destination="QQI-di-qhm" id="ZYf-1I-rXZ"/>
+                <outlet property="lbValue" destination="awl-et-A4a" id="uui-lN-bF6"/>
+            </connections>
+            <point key="canvasLocation" x="-90" y="-36"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,409 @@
+/*
+ Localizable.strings
+ OneAtlasSampleApp
+ 
+ Created by Airbus DS on 26/10/2018.
+ Copyright © 2018 Airbus. All rights reserved.
+*/
+
+
+// MARK: - GLOBAL
+"g_loading" = "Loading...";
+"g_network_error" = "Network Error.";
+"g_network_issue" = "A network issue occured, please check your settings.";
+"g_at" = "at";
+"g_login" = "Login";
+"g_ok" = "OK";
+"g_next" = "Next";
+"g_cancel" = "Cancel";
+"g_retry" = "Retry";
+"g_squarekm" = "km²";
+"g_license" = "License";
+"g_spot" = "SPOT";
+"g_pleiades" = "Pléiades";
+"g_satellite" = "Satellite";
+"g_webmercator" = "WebMercator";
+"g_geometric" = "Geometric";
+"unit_gb" = "GB";
+"unit_mb" = "MB";
+"unit_tiles" = "tiles";
+"unit_euro" = "€";
+"g_freemium" = "Freemium";
+"g_no_results" = "No results found";
+"g_error_occured" = "An error occured.";
+"g_x_results_found" = "$__res__ result$__plu__ found.";
+"g_unknown_date" = "(Unknown date)";
+
+
+// MARK: - SUBSCRIPTIONS
+"subscription_status_unknown" = "UNKNOWN STATUS";
+"subscription_status_active" = "ACTIVE";
+"subscription_status_pending" = "PENDING";
+"subscription_status_revoked" = "REVOKED";
+"subscription_status_suspended" = "SUSPENDED";
+
+"subscription_kind_unknown" = "Unknown Subscription";
+"subscription_kind_living_library" = "Living Library";
+"subscription_kind_earth_monitor" = "Earth Monitor";
+"subscription_kind_ocean_finder" = "Ocean Finder";
+"subscription_kind_analytics_toolbox" = "Analytics Toolbox";
+"subscription_kind_change_detection" = "Change Detection";
+"subscription_kind_verde" = "Verde";
+
+
+
+// MARK: - UCA MGR
+"uca_error" = "UCA Authentication error";
+"uca_password_error" = "Invalid user name, or wrong password.";
+"uca_password_too_short" = "Password too short, must have at least 10 characters.";
+"uca_login_invalid" = "Invalid user name, must be an email address.";
+"uca_state_error" = "State does not match";
+
+
+// MARK: - SPLASH
+"splash_err_auth_expired" = "Authentication Error";
+"splash_msg_auth_expired" = "Your authentication has expired. Please login again.";
+"splash_button_auth_expired" = "Login";
+"splash_err_network" = "Network Error";
+"splash_button_network" = "Retry";
+"splash_uca_login_title" = "Open Secure UCA Login";
+"splash_uca_login_message" = "Please login through Secure UCA Authentication.\nYou may force the login page to open using the button below:";
+"splash_uca_error_title" = "Retry";
+"splash_uca_error_message" = "A network error occured when connecting to the UCA server.\nPlease check your network settings.";
+"splash_uca_started" = "UCA Authentication started...";
+"splash_guest_title" = "Welcome to OneAtlas !";
+"splash_guest_message" = "You are using a Guest Account.\n\nYou need a Premium Account or Free Trial to use the app.\n";
+"splash_guest_reset" = "Use another account";
+"splash_guest_bkg_message" = "\nYou need a Premium account or Free Trial to use the app.";
+"splash_jb_device_title" = "WARNING";
+"splash_jb_device_message" = "Your device seems to be jailbroken.\nYou now use this app at your own risk.\nAirbus DS Geo may not be held responsible for any damage.";
+"splash_jb_device_agree" = "I agree";
+"splash_update_title" = "Update required";
+"splash_update_message" = "A new version of this app is available. Please update your version.";
+"splash_update_button" = "Update";
+
+
+// MARK: - ASK BIOMETRY
+"askbio_skip" = "Skip >";
+"askbio_accept" = "Accept";
+"askbio_decline" = "Decline";
+"askbio_explain" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+
+// MARK: - BIOMETRY
+"bio_reason" = "TODO";
+"bio_login" = "Please login with Biometrics (they will remain secret).";
+"bio_pin" = "Please login with your PIN code (it will remain secret).";
+
+
+// MARK: - LANDING NAVIGATION
+"nav_main" = "Home";
+"nav_map" = "Search";
+"nav_notif" = "Notifications";
+"nav_workspace" = "My Data";
+
+
+// MARK: - DASHBOARD
+"dash_title" = "OneAtlas";
+"dash_tile_discover" = "EXPLORE";
+"dash_tile_updated_alerts" = "UPDATED\nALERTS";
+"dash_tile_my_usage" = "USAGE";
+"dash_tile_pending_orders" = "PENDING\nORDERS";
+"dash_tile_my_aois" = "MY DATA";
+"dash_options_about" = "About";
+"dash_options_terms" = "Terms of Use";
+"dash_options_logout" = "Logout";
+"dash_options_cancel" = "Cancel";
+
+
+// MARK: - LANDING PAGE
+"landpage_days_remaining" = "$__days__ days remaining";
+"landpage_unit_remaining" = "You have $__amount__ $__unit__ left";
+"landpage_percent_used" = "\n% used";
+"landpage_empty_title" = "There are no elements to display.";
+"landpage_empty_delivery" = "-";
+"landpage_more" = "MORE";
+"landpage_latest_orders" = "LATEST ORDERS";
+"landpage_about" = "About";
+"landpage_terms" = "Terms of Use";
+"landpage_from_to" = "From $__start__ to $__end__";
+
+
+// MARK: - ABOUT
+
+
+// MARK: - ORDER DETAILS
+"order_details_title" = "Order Details";
+"order_details_no_aoi" = "There is no AOI to display.";
+"order_details_no_feature" = "This feature type is not handled and cannot be displayed.";
+"order_details_order_not_delivered" = "This order is not delivered.";
+"order_details_no_data" = "There is no data to display.";
+"order_details_ident" = "ID";
+"order_details_crscode" = "CRS code";
+"order_details_product_type" = "Product type";
+"order_details_image_format" = "Image format";
+"order_details_radiometric_processing" = "Radiometric processing";
+"order_details_all" = "[All kinds]";
+"order_details_unknown" = "Unknown Order";
+"order_details_image" = "Image";
+"order_details_earth_monitor" = "Earth Monitor";
+"order_details_ocean_finder" = "Ocean Finder";
+"order_details_verde" = "Verde";
+"order_details_analytics_toolbox" = "Analytics Toolbox";
+"order_details_change_detection" = "Change Detection";
+"order_details_delivery" = "Delivery";
+"order_details_ordered_on" = "Ordered on $__date__ at $__time__";
+
+// MARK: - MAP
+"map_search_this_area" = "Search this area";
+"map_order" = "Order";
+"map_loading_ol_cap" = "Loading OneLive Capabilities...";
+"map_unknown_address" = "Cannot find this address.";
+"map_no_webmercator" = "This image projection cannot be displayed.";
+"map_no_stream" = "This stream cannot be found.";
+"map_no_stream_for_freemium" = "Streaming in this area is not available for this user account.";
+"map_loading_failed" = "The map cannot be loaded, and is unavailable. Please try again later.";
+"aoi_type_unknown" = "Unknown AOI";
+"aoi_type_search" = "Search results";
+"aoi_type_user" = "User AOI";
+"aoi_type_stream" = "Stream AOI";
+
+// MARK: - MAP LONGPRESS TUTORIAL
+"lp_tut_explain" = "You can add a custom location pin by doing a long-press gesture anywhere on the map.";
+"lp_tut_dontshow" = "Do not show this message any more.";
+"lp_tut_title" = "TIP:";
+
+
+// MARK: - BOTTOM SEARCH
+"bsearch_network_error" = "A network error occured.";
+"bsearch_marker_placed" = "Marker placed";
+"bsearch_loading" = "Loading...";
+"bsearch_living_library" = "Living Library";
+"bsearch_my_images" = "My Images";
+"bsearch_my_cd" = "My Change Detection";
+"bsearch_my_aois" = "My AOIs";
+"bsearch_fmt_img_found" = " images found";
+"bsearch_fmt_aoi_found" = " AOIs found";
+"bsearch_fmt_cd_found" = " images found";
+"bsearch_unknown_location" = "(unknown location)";
+"bsearch_no_data" = "No data found.";
+"bsearch_details" = "DETAILS";
+
+
+// MARK: - BOTTOM SEARCH FILTER
+"filter_reset" = "RESET";
+"bsfilter_title" = "IMAGE FILTER";
+"bsfilter_apply" = "APPLY";
+"bsfilter_no_date" = "Any date";
+"bsfilter_min_date" = "Minimum date:";
+"bsfilter_max_date" = "Maximum date:";
+"bsfilter_select" = "Select";
+"bsfilter_clear" = "Clear";
+"bsfilter_max_cloud" = "Max. cloud cover ($__percent__ %):";
+"bsfilter_max_angle" = "Max. incidence angle ($__degrees__°):";
+
+// MARK: - MAP LAYERS
+"mlayer_title" = "MAP TYPE";
+"mlayer_subtitle" = "Please select layer kind";
+"mlayer_default" = "Street map";
+"mlayer_onelive" = "OneAtlas\nBasemap";
+"mlayer_worlddem" = "WorldDEM\nRelief map";
+
+
+// MARK: - FEATURE DETAILS
+"fdetails_ll" = "LIVING LIBRARY ARCHIVE";
+"fdetails_mi" = "USER-ORDERED IMAGE";
+"fdetails_cd" = "CHANGE DETECTION";
+"fdetails_order" = "ORDER";
+"fdetails_share" = "SHARE";
+"fdetails_button_bookmark" = "Bookmark\n";
+"fdetails_button_order" = "ORDER";
+"fdetails_button_share" = "Share\n";
+"fp_productioninfo" = "PRODUCTION INFORMATION";
+"fp_archiveinfo" = "IMAGE INFORMATION";
+"fp_processingLevel" = "Processing Level";
+"fp_productionStatus" = "Production Status";
+"fp_constellation" = "Constellation";
+"fp_resolution" = "Resolution";
+"fp_sensorType" = "Sensor Type";
+"fp_spectralRange" = "Spectral Range";
+"fp_productType" = "Product Type";
+"fp_productCategory" = "Product Category";
+"fp_acquisitionDate" = "Acquisition Date";
+"fp_azimuthAngle" = "Azimuth Angle";
+"fp_cloudCover" = "Cloud Coverage";
+"fp_snowCover" = "Snow Coverage";
+"fp_commercialReference" = "Commercial Reference";
+"fp_sourceIdentifier" = "ID";
+"fp_illuminationAzimuthAngle" = "Illumination Azimuth Angle";
+"fp_illuminationElevationAngle" = "Illumination Elevation Angle";
+"fp_incidenceAngle" = "Incidence Angle";
+"fp_incidenceAngleAcrossTrack" = "Incidence Angle Across Track";
+"fp_incidenceAngleAlongTrack" = "Incidence Angle Along Track";
+
+
+// MARK: - SUBSCRIPTION DETAILS
+"lld_remaining" = "You have $__left__ left until $__date__ ($__days__ days remaining).";
+"sd_title" = "Title";
+"sd_start_date" = "Start date";
+"sd_end_date" = "End date";
+"sd_total_amount" = "Total amount";
+"sd_amount_consumed" = "Consumed amount";
+
+
+// MARK: - MAP SEARCH BAR
+"searchbar_placeholder" = "Search location, coordinates...";
+
+
+// MARK: - MAP AOI EDITION
+"aoi_selection_title" = "AOI Selection";
+"aoi_too_small" = "The selected area is too small.";
+"aoi_surface" = "Approximate surface: ";
+"aoi_check_and_order" = "Review\nand order";
+"aoi_select_aoi_first" = "Review\nand order";
+"aoi_checking_order" = "Checking price and availability...";
+"aoi_check_failed" = "Network error, please try again.";
+"aoi_check_bad" = "Your selection does not include the AOI, please refine your selection.";
+"aoi_manual" = "Please select your AOI:";
+
+
+// MARK: - ORDER REVIEW / SUMMARY
+"order_review_title" = "Order Review";
+"order_review_buy" = "Order";
+"order_review_getting_price" = "Calculating price and area surface, please wait...";
+"order_review_getting_price_error" = "An error occured while retrieve the price. Please edit your AOI and retry.";
+"order_review_buying" = "Ordering...";
+"order_review_buy_ok" = "Product ordered !";
+"order_review_explain_1" = "Once confirmed, your image will be processed and delivered in your private Data space.";
+"order_review_explain_2" = "Delivery can take up to 48h.\n";
+"order_review_freemium" = "To order images, you need a Premium user account.";
+"order_review_freemium_url" = "To order images, you need to upgrade your account. Please visit $__PORTAL__ for more details.";
+"order_review_license" = "I have read and agree to the terms of the ";
+"order_review_license_pleiades" = "Non-exclusive license to use Pléiades satellite product.";
+"order_review_license_spot" = "Non-exclusive license to use SPOT satellite product.";
+"order_review_license_pleiades_link" = "https://www.intelligence-airbusds.com/files/pmedia/public/r13117_9_eula-pleiades-vuk-october2017.pdf";
+"order_review_license_spot_link" = "https://www.intelligence-airbusds.com/files/pmedia/public/r17523_9_eula-spot1-7-vuk-oct2017.pdf";
+"order_review_options_title" = "Please select your preferred options:";
+"order_review_options" = "Product options selectors";
+"order_review_geometric" = "Geometric processing";
+"order_review_projection" = "Projection";
+"order_review_additional" = "Additional processing";
+"order_review_format" = "Product format";
+"order_review_angle" = "Angle:";
+"order_review_scene" = "Scene:";
+"order_review_credit_error" = "You do not have enough credits to place this order.";
+"order_review_select_aoi" = "Please select an AOI before ordering.";
+"order_review_option_ortho" = "Ortho";
+"order_review_option_geometric" = "Geometric";
+"order_review_option_12bits" = "Bundle 12 bits reflectance, 3 + 1 bands";
+"order_review_option_8bits" = "Bundle 8 bits display, 3 + 1 bands";
+"order_review_option_pansharpened" = "PMS 8 bits display, 4 + 1 bands";
+"order_review_option_jp2" = "JPEG 2000";
+"order_review_option_geotiff" = "GeoTIFF";
+
+
+// MARK: - ORDER PASSED
+"order_passed_title" = "Congratulations !";
+"order_passed_details_1" = "Your order was successfully submitted under the reference:";
+"order_passed_details_2" = "Your image should be available in your workspace soon.";
+"order_passed_view" = "View orders";
+"order_passed_continue" = "Continue";
+
+
+// MARK: - MY WORKSPACE
+"myworkspace_title" = "My Data";
+"myworkspace_filter" = "Workspace filter";
+"myworkspace_freemium_area" = "Free trial streaming area #%d";
+
+
+// MARK: - NOTIFICATIONS
+"notif_title" = "Notifications";
+"notif_mark_as_read" = "Mark as read";
+"notif_mark_as_unread" = "Mark as unread";
+"notif_filter_title" = "NOTIFICATIONS FILTER";
+"notif_all_services" = "All Services";
+"service_data" = "Data";
+"service_earth-monitor" = "Earth Monitor";
+"service_analytics-toolbox" = "Analytics Toolbox";
+"service_ocean-finder" = "Ocean Finder";
+"service_verde" = "Verde";
+
+
+
+// MARK: - MY ORDERS
+"orders_title" = "Orders";
+"orders_status_ordered" = "Ordered";
+"orders_status_pending" = "Pending";
+"orders_status_delivered" = "Delivered";
+"orders_status_unknown" = "Unknown";
+"orders_status_error" = "ERROR";
+"orders_status_all" = "Show all";
+"orders_no_orders" = "No orders found.";
+"orders_no_pending_orders" = "No pending orders found.";
+"orders_found" = "orders found.";
+"orders_pending_found" = "pending orders found.";
+"orders_one_found" = "1 order found.";
+"orders_one_pending_found" = "1 pending order found.";
+"orders_constellation_name" = "%@ image";
+"orders_no_display" = "This order cannot be displayed on the map.";
+"orders_filter_title" = "ORDERS FILTER";
+
+// MARK: - ORDER CELL
+"ordercell_ll_subtitle" = "%@ plan for %d months";
+"ordercell_cd_subtitle" = "%d %@ acquisitions at %.02fm";
+"ordercell_title_unknown" = "Unknown order";
+
+
+// MARK: - MY USAGE
+"usage_title" = "Usage";
+"usage_tile_ll" = "LIVING\nLIBRARY";
+"usage_tile_cd" = "CHANGE\nDETECTION";
+"usage_tile_ll_lc" = "Living Library";
+"usage_tile_cd_lc" = "Change Detection";
+"usage_tiles_left" = "Tiles left";
+"usage_mb_left" = "MB left";
+
+
+// MARK: - MY SUBSCRIPTIONS
+"subscription_title" = "Subscription";
+"subs_status_active" = "Active only";
+"subs_status_all" = "Show all";
+"subs_no_subs" = "No subscriptions found.";
+"subs_found" = " subscriptions found.";
+"subs_active_found" = " active subscriptions found.";
+"subs_one_found" = "1 subscription found.";
+"subs_one_active_found" = "1 active subscription found.";
+
+
+// MARK: - LIVING LIBRARY DETAILS
+"lld_status_active" = "ACTIVE";
+"lld_status_cancelled" = "CANCELLED";
+"lld_status_pending" = "PENDING";
+"lld_status_revoked" = "REVOKED";
+"lld_status_unknown" = "Unknown Status";
+"lld_message_tile_active" = "You have %@ tiles left until %@ at %@ (%ld days remaining).";
+"lld_message_mb_active" = "You have %@ MB left until %@ at %@ (%ld days remaining).";
+// TODO: OAMOBILE-292 removed this text, must be restored later depending on subscription status.
+// \n\nYou can renew your subscription right now. Your new Living Library subscription will become active at the end of the current one.";
+"lld_message_inactive" = "This Living Library subscription is cancelled.";
+"lld_message_pending" = "This Living Library subscription is pending.\nIt will be activated at the beginning of the validity period.";
+"lld_message_suspended" = "This Living Library subscription is suspended.";
+"lld_button_active" = "RENEW SUBSCRIPTION";
+"lld_button_inactive" = "ORDER NEW SUBSCRIPTION";
+"lld_details" = "DETAILS";
+"lld_consumption" = "CONSUMPTION";
+
+
+// MARK: - SUBSCRIPTION CELL
+"subcell_ll_title" = "Living Library ";
+"subcell_ll_title_days" = "days remaining";
+"subcell_ll_title_cancelled" = "Cancelled";
+"subcell_ll_title_subtitle" = "You have $__amount__ left";
+"subcell_ll_mb_subtitle" = "You have %@ MB left";
+"subcell_ll_percent" = "% used";
+"subcell_cd_title" = "Change Detection ";
+"subcell_cd_title_days" = "%ld days remaining";
+"subcell_cd_title_revoked" = "[revoked]";
+"subcell_cd_frequency" = "Frequency: %@";
+"subcell_cd_percent" = "% done";
+
