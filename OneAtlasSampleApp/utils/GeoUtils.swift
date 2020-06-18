@@ -24,17 +24,23 @@ class GeoUtils: NSObject {
         return area_str
     }
     
-    class func areaString(polygon:OAPolygon) -> String {
+    
+    class func areaString(polygon: Polygon) -> String {
         var area_str = "Invalid value"
-        let area = MapUtils.getAreaM2(sw: polygon.southWest,
-                                      ne: polygon.northEast)
+        
+        let sw = CLLocationCoordinate2D(latitude: polygon.boundingBox.southWest.latitude,
+                                        longitude: polygon.boundingBox.southWest.longitude)
+        let ne = CLLocationCoordinate2D(latitude: polygon.boundingBox.northEast.latitude,
+                                        longitude: polygon.boundingBox.northEast.longitude)
+        let area = MapUtils.getAreaM2(sw: sw,
+                                      ne: ne)
         area_str = areaSquareMetersToString(area)
         return area_str
     }
     
     
     
-    class func coordinateString(coord:CLLocationCoordinate2D) -> String {
+    class func coordinateString(coord: CLLocationCoordinate2D) -> String {
         return String(format: "%.04f,%.04f", coord.latitude, coord.longitude)
     }
     

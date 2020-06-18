@@ -15,10 +15,10 @@ class UISearchDrawerCell: UIAutoRegisterTableCell {
         super.awakeFromNib()
         // Initialization code
         
-        textLabel?.textColor = AirbusColor.textDark.value
+        textLabel?.textColor = Color.textDark.value
         textLabel?.font = AirbusFont.regularBold.value
         
-        detailTextLabel?.textColor = AirbusColor.textLight.value
+        detailTextLabel?.textColor = Color.textLight.value
         detailTextLabel?.font = AirbusFont.tiny.value
     }
 

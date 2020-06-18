@@ -14,8 +14,8 @@ import OneAtlas
 
 protocol SearchResultsDrawerDelegate: BaseDrawerDelegate {
     func onSearchResultsCancelClicked()
-    func onSearchResultsFeatureSelected(_ feature:OAFeature, workspaceKind:EWorkspaceKind)
-    func onSearchResultsAOISelected(_ aoi:OAUserAOI, workspaceKind:EWorkspaceKind)
+    func onSearchResultsFeatureSelected(_ feature:Feature, workspaceKind:EWorkspaceKind)
+    func onSearchResultsAOISelected(_ aoi:UserAOI, workspaceKind:EWorkspaceKind)
 }
 
 
@@ -33,7 +33,7 @@ class SearchResultsDrawerVC: BaseDrawerVC {
         }
     }
     
-    var geometry:OAGeometry? {
+    var geometry: Geometry? {
         didSet {
             startRefresh()
             uvWorkspace.geometry = geometry
@@ -55,14 +55,18 @@ class SearchResultsDrawerVC: BaseDrawerVC {
     
     func stopRefresh() {
         
-        if let polygon = geometry as? OAPolygon,
-            let center = polygon.centroid()?.coordinate {
-            uvSearchHeader.subtitle1 = String(format: "Center: %@", GeoUtils.coordinateString(coord: center))
+        if let polygon = geometry as? Polygon {
+            let center = polygon.centroid
+            uvSearchHeader.subtitle1 = String(format: "Center: %@",
+                                              GeoUtils.coordinateString(coord: CLLocationCoordinate2D(latitude: center.latitude,
+                                                                                                      longitude: center.longitude)))
             uvSearchHeader.subtitle2 = String(format: "Area: %@", GeoUtils.areaString(polygon: polygon))
             
         }
-        else if let point = geometry as? OAPoint {
-            uvSearchHeader.subtitle1 = String(format: "Center: %@", GeoUtils.coordinateString(coord: point.coordinate))
+        else if let point = geometry as? Point {
+            uvSearchHeader.subtitle1 = String(format: "Center: %@",
+                                              GeoUtils.coordinateString(coord: CLLocationCoordinate2D(latitude: point.latitude,
+                                                                                                      longitude: point.longitude)))
             uvSearchHeader.subtitle2 = ""
         }
         uvSearchHeader.isLoading = false
@@ -104,16 +108,12 @@ extension SearchResultsDrawerVC {
 // =============================================================================
 extension SearchResultsDrawerVC: UIMultiWorkspaceListViewDelegate {
     
-//    func onMultiWorkspaceListViewWillRefresh() {
-//        // TODO: will refresh
-//    }
-    
     func onMultiWorkspaceListViewItemSelected(_ kind:EWorkspaceKind, item: Any) {
         // TODO: hide me to avoid multiselection while loading
-        if let feature = item as? OAFeature {
+        if let feature = item as? Feature {
             delegate?.onSearchResultsFeatureSelected(feature, workspaceKind:kind)
         }
-        else if let aoi = item as? OAUserAOI {
+        else if let aoi = item as? UserAOI {
             delegate?.onSearchResultsAOISelected(aoi, workspaceKind:kind)
         }
     }

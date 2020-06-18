@@ -31,16 +31,16 @@ class UISearchDrawerHeader: UIXibView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        lbTitle.textColor = AirbusColor.textDark.value
-        lbSubtitle2.textColor = AirbusColor.textLight.value
-        lbSubtitle2.textColor = AirbusColor.textLight.value
+        lbTitle.textColor = Color.textDark.value
+        lbSubtitle2.textColor = Color.textLight.value
+        lbSubtitle2.textColor = Color.textLight.value
     
         aiLoading.hidesWhenStopped = true
         btFilter.tintColor = Config.appColor
-        btCancel.tintColor = AirbusColor.textLight.value
+        btCancel.tintColor = Color.textLight.value
         
         // add simple badge to filter button
-        _badge.backgroundColor = AirbusColor.red.value
+        _badge.backgroundColor = Color.red.value
         _badge.layer.cornerRadius = _badge.bounds.size.width / 2
         _badge.isHidden = true
         btFilter.addSubview(_badge)

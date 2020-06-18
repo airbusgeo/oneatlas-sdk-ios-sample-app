@@ -21,7 +21,7 @@ fileprivate let TILE_MATRIX_SET = "3857"
 class AOIShape: MGLPolyline {
     var type:EAOIType = .unknown
     var color:UIColor = .red
-    var polygon:OAPolygon?
+    var polygon:Polygon?
 }
 
 
@@ -39,7 +39,7 @@ class POIAnnotation: MGLPointAnnotation {
 class MapboxEngineManager: NSObject, MapEngineContract {
     
     private var _mapView:MGLMapView
-    private var _streamCache:[String:OATileLayer] = [:]
+    private var _streamCache:[String: TileLayer] = [:]
     private var _previousCamera:MGLMapCamera?
     private var _poiAnnotation = POIAnnotation.init()
     private var _aoiShape = AOIShape.init()
@@ -156,9 +156,9 @@ class MapboxEngineManager: NSObject, MapEngineContract {
     }
 
     
-    func polygonForCurrentViewport(edgeInsets:UIEdgeInsets? = nil) -> OAPolygon {
-        var coords = coordinatesForCurrentViewport(edgeInsets: edgeInsets)
-        return OAPolygon(fromCoordinates: UnsafeMutablePointer<CLLocationCoordinate2D>(&coords), count: 5)
+    func polygonForCurrentViewport(edgeInsets:UIEdgeInsets? = nil) -> Polygon {
+        let coords = coordinatesForCurrentViewport(edgeInsets: edgeInsets)
+        return Polygon.from(coords)
     }
     
     
@@ -184,9 +184,7 @@ class MapboxEngineManager: NSObject, MapEngineContract {
             aoi.type = type
             aoi.title = title ?? type.rawValue
             aoi.color = color
-            
-            var c = coords
-            aoi.polygon = OAPolygon(fromCoordinates: UnsafeMutablePointer<CLLocationCoordinate2D>(&c), count: 5)
+            aoi.polygon = Polygon.from(coords)
 
             // add annotation
             self._mapView.addAnnotation(aoi)
@@ -194,14 +192,15 @@ class MapboxEngineManager: NSObject, MapEngineContract {
     }
     
     
-    func addAOIShape(polygon:OAPolygon,
+    func addAOIShape(polygon:Polygon,
                      type:EAOIType,
                      title:String? = nil,
                      color:UIColor) {
-        for poly:[OAPoint] in polygon.coordinates {
+        for poly:[Point] in polygon.coordinates {
             var coords = [CLLocationCoordinate2D]()
             for point in poly {
-                coords.append(point.coordinate)
+                coords.append(CLLocationCoordinate2D(latitude: point.latitude,
+                                                     longitude: point.longitude))
             }
             let aoi = AOIShape(coordinates: coords, count: 5)
             aoi.polygon = polygon
@@ -230,11 +229,11 @@ class MapboxEngineManager: NSObject, MapEngineContract {
     // =========================================================================
     // MARK: - Streaming
     // =========================================================================
-    func addStreamFromProductFeature(_ feature: OAProductFeature,
+    func addStreamFromProductFeature(_ feature: ProductFeature,
                                      aoiColor: UIColor,
                                      workspaceKind: Int? = nil) {
-        let source_id = feature.ident + "-source"
-        let layer_id = STREAM_PREFIX + feature.ident
+        let source_id = feature.id + "-source"
+        let layer_id = STREAM_PREFIX + feature.id
         var add_source = false
         
         if let style = _mapView.style {
@@ -272,14 +271,16 @@ class MapboxEngineManager: NSObject, MapEngineContract {
     private func addSourceAndLayerFromProductFeature(sourceID: String,
                                                      layerID: String,
                                                      style: MGLStyle,
-                                                     feature: OAProductFeature,
+                                                     feature: ProductFeature,
                                                      aoiColor: UIColor,
                                                      workspaceKind: Int? = nil) {
         let default_layer_id = "default"
         let tile_matrix_set = "EPSG" + TILE_MATRIX_SET
+        
+        
 
         // this source was not added yet so get capabilities
-        OneAtlas.sharedInstance()?.viewService.getWMTS(feature, with: { (capabilities:OACapabilities?, error:OAError?) in
+        OneAtlas.shared.viewService?.getWMTS(from: feature) { (capabilities: Capabilities?, error: Error?) in
             if let capabilities = capabilities {
                 let layer = capabilities.tileLayers[default_layer_id]
                 if let tms = capabilities.tileMatrixSets[tile_matrix_set] {
@@ -290,9 +291,9 @@ class MapboxEngineManager: NSObject, MapEngineContract {
                         MGLTileSourceOption.maximumZoomLevel: tms.maxZoomLevel,
                     ]
 
-                    let url_template = capabilities.wmtsTemplateURL(withTileMatrixSet: tile_matrix_set,
+                    let url_template = capabilities.wmtsTemplateURL(with: tile_matrix_set,
                                                                     layerID: default_layer_id,
-                                                                    useXYZ: true)!
+                                                                    useXYZ: true)
                     let rts = MGLRasterTileSource(identifier: sourceID,
                                                   tileURLTemplates: [url_template],
                                                   options: options)
@@ -335,16 +336,16 @@ class MapboxEngineManager: NSObject, MapEngineContract {
                                                            error: error)
                 }
             }
-        })
+        }
     }
    
         
-    private func addedStreamFromProductFeatureCompletion(_ feature: OAProductFeature,
+    private func addedStreamFromProductFeatureCompletion(_ feature: ProductFeature,
                                                          shapeColor:UIColor,
                                                          workspaceKind:Int?) {
         
         // always show polygon around bounding box
-        if let polygon = feature.geometry as? OAPolygon {
+        if let polygon = feature.geometry as? Polygon {
             self.addAOIShape(polygon: polygon,
                              type: .stream,
                              color: shapeColor)
@@ -388,8 +389,7 @@ class MapboxEngineManager: NSObject, MapEngineContract {
     
     private func setupAllLayers() {
         if let style = _mapView.style {
-            OneAtlas.sharedInstance()?.dataService.getOneLiveCapabilities({ (capabilities:OACapabilities?, error:OAError?) in
-                
+            OneAtlas.shared.dataService?.getOneLiveCapabilities({ (capabilities, error) in
                 if let capabilities = capabilities {
                     if let tms = capabilities.tileMatrixSets[TILE_MATRIX_SET] {
                         let min_zoom = NSNumber(value: tms.minZoomLevel)
@@ -398,7 +398,7 @@ class MapboxEngineManager: NSObject, MapEngineContract {
                         // now loop thru OneAtlas layer types and add them to engine
                         for layer in EMapLayer.allCases {
                             if layer.isOneAtlas() {
-                                let oneatlas_url_template = capabilities.wmtsTemplateURL(withTileMatrixSet: TILE_MATRIX_SET,
+                                let oneatlas_url_template = capabilities.wmtsTemplateURL(with: TILE_MATRIX_SET,
                                                                                          layerID: layer.rawValue,
                                                                                          useXYZ: true)
                                 let options = [
@@ -408,7 +408,7 @@ class MapboxEngineManager: NSObject, MapEngineContract {
                                 ]
                                 
                                 let oneatlas_source = MGLRasterTileSource(identifier: layer.rawValue + "-source",
-                                                                          tileURLTemplates: [oneatlas_url_template ?? ""],
+                                                                          tileURLTemplates: [oneatlas_url_template],
                                                                           options: options)
                                 
                                 let oneatlas_layer = MGLRasterStyleLayer(identifier: LAYER_PREFIX + layer.rawValue,
@@ -490,9 +490,13 @@ class MapboxEngineManager: NSObject, MapEngineContract {
             _previousCamera = _mapView.camera;
             
             // get AOI bounding box
-            if let bbox = aoi.polygon?.boundingBox(),
-                bbox.count == 2 {
-                let bounds = MGLCoordinateBounds(sw: bbox[0].coordinate, ne: bbox[1].coordinate)
+            if let bbox = aoi.polygon?.boundingBox {
+                let sw = CLLocationCoordinate2D(latitude: bbox.southWest.latitude,
+                                                longitude: bbox.southWest.longitude)
+                let ne = CLLocationCoordinate2D(latitude: bbox.northEast.latitude,
+                                                longitude: bbox.northEast.longitude)
+                let bounds = MGLCoordinateBounds(sw: sw,
+                                                 ne: ne)
                 let camera = _mapView.cameraThatFitsCoordinateBounds(bounds,
                                                                      edgePadding: edgeInsets)
                 _mapView.fly(to: camera, withDuration: duration, completionHandler: nil)

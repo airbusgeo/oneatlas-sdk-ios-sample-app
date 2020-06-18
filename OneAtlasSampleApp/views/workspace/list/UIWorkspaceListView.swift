@@ -51,7 +51,7 @@ class UIWorkspaceListView: UICountingListView {
     
     
     // specific reset method
-    func resetWithGeometry(_ geometry: OAGeometry? = nil,
+    func resetWithGeometry(_ geometry: Geometry? = nil,
                            workspaceKind: EWorkspaceKind,
                            workspaceID: String,
                            processingLevel: EProcessingLevel? = nil,

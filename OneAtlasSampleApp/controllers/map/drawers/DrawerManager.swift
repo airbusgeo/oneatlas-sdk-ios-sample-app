@@ -11,13 +11,12 @@ import Pulley
 import MapboxGeocoder
 import OneAtlas
 
-
 class DrawerManager: NSObject {
     
     private var _prevPosition:PulleyPosition = .partiallyRevealed
     private var _drawerStack:[BaseDrawerVC] = []    
     
-    func showSearchResultDrawer(geometry: OAGeometry,
+    func showSearchResultDrawer(geometry: Geometry,
                                 title: String = "Marker placed",
                                 delegate: SearchResultsDrawerDelegate,
                                 position: PulleyPosition = .collapsed,
@@ -54,7 +53,9 @@ class DrawerManager: NSObject {
                     // re-open animated
                     pvc.setDrawerPosition(position: position, animated: true, completion: { (reopen) in
                         
-                        sr.addWorkspaceID(Config.livingLibraryWorkspaceID, kind: .livingLibrary, processingLevel: EProcessingLevelSensor)
+                        sr.addWorkspaceID(Config.livingLibraryWorkspaceID ?? "",
+                                          kind: .livingLibrary,
+                                          processingLevel: .sensor)
                         sr.addWorkspaceID(UserManager.workspaceID, kind: .myImages)
 
                         // this will trigger data refresh

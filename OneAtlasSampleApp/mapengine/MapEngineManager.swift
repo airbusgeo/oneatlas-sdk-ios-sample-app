@@ -75,25 +75,25 @@ public protocol MapEngineManagerDelegate {
     func cameraDidFly(toCoordinate coord:CLLocationCoordinate2D)
     
     // stream control
-    func addedStreamFromFeature(_ feature:OAProductFeature, workspaceKind:Int?, error: Error?)
+    func addedStreamFromFeature(_ feature:ProductFeature, workspaceKind:Int?, error: Error?)
 }
 
 
 public protocol MapEngineContract {
     func setPOIAnnotation(atCoordinate coord:CLLocationCoordinate2D, title:String?, subtitle:String?)
     func removePOIAnnotation()
-    func addAOIShape(polygon:OAPolygon, type:EAOIType, title:String?, color:UIColor)
+    func addAOIShape(polygon:Polygon, type:EAOIType, title:String?, color:UIColor)
     func addAOIShapeForCurrentViewport(edgeInsets:UIEdgeInsets?, type:EAOIType, title:String?, color:UIColor)
     func removeAOIShape(type:EAOIType)
     
-    func addStreamFromProductFeature(_ feature:OAProductFeature, aoiColor: UIColor, workspaceKind:Int?)
+    func addStreamFromProductFeature(_ feature:ProductFeature, aoiColor: UIColor, workspaceKind:Int?)
     func removeStream()
     
     func flyCameraToCoordinate(coord:CLLocationCoordinate2D, span:CLLocationDegrees, duration:TimeInterval)
     func flyCameraToRegion(region:MapRectangularRegion, edgeInsets:UIEdgeInsets?, duration:TimeInterval)
     func adjustCameraToEdgeInsets(_ edgeInsets:UIEdgeInsets, span:CLLocationDegrees, duration:TimeInterval)
     func restoreCamera(duration:TimeInterval)
-    func polygonForCurrentViewport(edgeInsets:UIEdgeInsets?) -> OAPolygon
+    func polygonForCurrentViewport(edgeInsets:UIEdgeInsets?) -> Polygon
     func areaForCurrentViewport(edgeInsets:UIEdgeInsets?) -> Double
     
     func showLayer(_ layer:EMapLayer)

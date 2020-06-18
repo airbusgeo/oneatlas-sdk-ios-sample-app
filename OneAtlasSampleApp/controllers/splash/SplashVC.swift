@@ -50,18 +50,26 @@ class SplashVC: UIViewController {
             showError(title: "Error",
                       message: "Cannot read the APIKey files. Please check the README file for more info.")
         }
-
     }
     
     
     private func performLogin(oneAtlasAPIKey: String,
                               mapboxAPIKey: String) {
         
-        MGLAccountManager.accessToken = mapboxAPIKey as NSString
+        MGLAccountManager.accessToken = mapboxAPIKey
         GeoUtils.accessToken = mapboxAPIKey
 
+
+        // register this app to receive auth token refresh events
+        if let delegate = UIApplication.shared.delegate as? AuthServiceDelegate {
+            OneAtlas.shared.authService?.registerDelegate(delegate)
+        }
+
+
         // login with API Key
-        OneAtlas.sharedInstance()?.authenticateService.login(withAPIKey: oneAtlasAPIKey, clientID: EIDPClientID, block: { (aError) in
+        OneAtlas.shared.authService?.login(with: oneAtlasAPIKey,
+                                           clientID: .IDP,
+                                           block: { (aError) in
             if let _ = aError {
                 self.showError(title: "Error",
                                message: "Cannot login into OneAtlas. Please check your API key or network settings.")
@@ -70,12 +78,17 @@ class SplashVC: UIViewController {
                 // get the current user
                 UserManager.refreshCurrentUser(completion: { (user, subscriptions, error) in
                     let guest = user?.isGuest ?? true || UserManager.activeDataSubscription == nil
-                    
                     if guest {
                         self.showError(title: "Error",
                                        message: "This user account seems deactivated.")
                     }
                     else {
+                        
+//                        if let sconf = MGLNetworkConfiguration.sharedManager.sessionConfiguration {
+//                            sconf.httpAdditionalHeaders = OneAtlas.shared.authHeader
+//                        }
+
+                        
                         let map = MapVC(nibName: "MapVC", bundle: nil)
                         let drawer = SearchDrawerVC(nibName: "SearchDrawerVC", bundle: nil)
                         let pulley = PulleyViewController(contentViewController: map, drawerViewController: drawer)
@@ -89,7 +102,6 @@ class SplashVC: UIViewController {
     
     private func showError(title: String,
                            message: String) {
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)

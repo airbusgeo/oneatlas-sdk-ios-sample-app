@@ -1,5 +1,5 @@
 //
-//  OAUserAOI.swift
+//  UserAOI.swift
 //  OneAtlasSampleApp
 //
 //  Created by Airbus DS on 18/09/2019.
@@ -10,20 +10,20 @@ import UIKit
 import OneAtlas
 
 
-class OAUserAOI: OAPolygon {
+class UserAOI: Polygon {
 
-    var name:String = ""
+    var name: String = ""
+    // var coordinates: [[Point]] = []
     
-    class func buildAOIsFromMultiPolygon(_ multip:OAMultiPolygon,
-                                         nameFormat:String) -> [OAUserAOI] {
+    class func buildAOIsFromMultiPolygon(_ multip: MultiPolygon,
+                                         nameFormat:String) -> [UserAOI] {
         
         var idx = 0
-        var temp:[OAUserAOI] = []
+        var temp: [UserAOI] = []
         for p in multip.polygons {
             idx += 1
-            let aoi = OAUserAOI()
+            let aoi = UserAOI(from: p.coordinates[0])
             aoi.name = String(format: nameFormat, idx)
-            aoi.coordinates = p.coordinates
             temp.append(aoi)
         }
         return temp

@@ -49,11 +49,12 @@ class MapPresenter: MapPresenterContract {
         _mapView.resetMap()
         
         // grab feature
-        OneAtlas.sharedInstance()?.searchService.openSearch(withID: featureID, block: { (feature:OAFeature?, error:OAError?) in
+        OneAtlas.shared.searchService?.openSearch(id: featureID,
+                                                  block: { (feature: Feature?, error: Error?) in
             if let error = error {
                 self._mapView.showError(error.localizedDescription)
             }
-            else if let pf = feature as? OAProductFeature {
+            else if let pf = feature as? ProductFeature {
                 self._mapView.displayProductFeature(pf,
                                                     workspaceKind: .myImages)
             }
@@ -73,8 +74,8 @@ enum EMapInteractionReason: Int {
 protocol MapViewContract {
     func zoomToPlacemark(_ placemark:GeocodedPlacemark)
     func addPlacemark(_ placemark:GeocodedPlacemark, reason:EMapInteractionReason)
-    func displayProductFeature(_ productFeature:OAProductFeature, workspaceKind:EWorkspaceKind)
-    func displayUserAOI(_ aoi: OAUserAOI)
+    func displayProductFeature(_ productFeature:ProductFeature, workspaceKind:EWorkspaceKind)
+    func displayUserAOI(_ aoi: UserAOI)
     func displayViewportAOI()
     func resetMap()
     func showError(_ message: String?)
@@ -92,7 +93,7 @@ class MapVC: UIViewController {
     @IBOutlet weak var btFloating: UIFloatingMapButton!
     
     private var _drawerManager:DrawerManager?
-    private var _mapEngine:MapEngineContract?
+    private var _mapEngine: MapEngineContract?
     private var _presenter:MapPresenterContract?
     private var _isVisibleUI = true
     private var _mapReady = false
@@ -115,7 +116,7 @@ class MapVC: UIViewController {
 
         btFloating.clipsToBounds = true
         btFloating.layer.cornerRadius = Config.defaultCornerRadius
-        btFloating.tintColor = AirbusColor.textWhite.value
+        btFloating.tintColor = Color.textWhite.value
         
         showUI(enable: false)
     }
@@ -171,7 +172,6 @@ extension MapVC: MapEngineManagerDelegate {
             ToastUtils.showError(error.localizedDescription)
         }
         else {
-            
             // no location request. show help ?
             if CacheUtils.mapDidDeclineHelp == false {
                 // show help
@@ -237,7 +237,7 @@ extension MapVC: MapEngineManagerDelegate {
     }
     
     
-    func addedStreamFromFeature(_ feature: OAProductFeature,
+    func addedStreamFromFeature(_ feature: ProductFeature,
                                 workspaceKind streamKind: Int?,
                                 error: Error?) {
         if let error = error {
@@ -276,8 +276,7 @@ extension MapVC: MapViewContract {
         
         // show product features in drawer
         if let center = placemark.location?.coordinate {
-            let point = OAPoint()
-            point.coordinate = center
+            let point = Point(latitude: center.latitude, longitude: center.longitude)
             _drawerManager?.showSearchResultDrawer(geometry: point,
                                                    title: placemark.name,
                                                    delegate: self)
@@ -308,7 +307,7 @@ extension MapVC: MapViewContract {
     }
     
     
-    func displayProductFeature(_ productFeature: OAProductFeature,
+    func displayProductFeature(_ productFeature: ProductFeature,
                                workspaceKind:EWorkspaceKind) {
         // map may NOT be initialized at this point !
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (t) in
@@ -350,7 +349,7 @@ extension MapVC: MapViewContract {
     }
     
 
-    func displayUserAOI(_ aoi: OAUserAOI) {
+    func displayUserAOI(_ aoi: UserAOI) {
 
         // remove all, streams & shapes
         resetMap()
@@ -362,7 +361,8 @@ extension MapVC: MapViewContract {
                                 color: Config.appColor)
         
         // fly to AOI
-        let region = MapRectangularRegion(sw: aoi.southWest, ne: aoi.northEast)
+        let region = MapRectangularRegion(sw: CLLocationCoordinate2D.from(point: aoi.boundingBox.southWest),
+                                          ne: CLLocationCoordinate2D.from(point: aoi.boundingBox.northEast))
         _mapEngine?.flyCameraToRegion(region: region,
                                       edgeInsets: defaultMapEdgeInsets,
                                       duration: Config.animDurationSlow)
@@ -499,17 +499,17 @@ extension MapVC: SearchDrawerDelegate {
 // MARK: - SearchResultsDrawerDelegate
 // =============================================================================
 extension MapVC: SearchResultsDrawerDelegate {
-    func onSearchResultsFeatureSelected(_ feature: OAFeature,
+    func onSearchResultsFeatureSelected(_ feature: Feature,
                                         workspaceKind:EWorkspaceKind) {
         // add stream to map engine
-        if let pf = feature as? OAProductFeature {
+        if let pf = feature as? ProductFeature {
             _selectionFeedback.selectionChanged()
             displayProductFeature(pf, workspaceKind:workspaceKind)
         }
     }
     
     
-    func onSearchResultsAOISelected(_ aoi: OAUserAOI,
+    func onSearchResultsAOISelected(_ aoi: UserAOI,
                                     workspaceKind: EWorkspaceKind) {
         _selectionFeedback.selectionChanged()
         displayUserAOI(aoi)
@@ -531,7 +531,7 @@ extension MapVC: SearchResultsDrawerDelegate {
 // =============================================================================
 extension MapVC: FeatureDetailsDrawerDelegate {
     
-    func onFeatureDetailsCancelClicked(feature: OAFeature) {
+    func onFeatureDetailsCancelClicked(feature: Feature) {
         // restore search results
         _mapEngine?.removeStream()
         let _ = _drawerManager?.popDrawer(defaultPosition: nil, completion: nil)

@@ -39,7 +39,7 @@ class UICardFooterView: UIView {
         v.clipsToBounds = true
         v.layer.cornerRadius = Config.defaultCornerRadius
         v.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        v.backgroundColor = AirbusColor.cardCell.value
+        v.backgroundColor = Color.cardCell.value
 
         footer.addSubview(v)
         addSubview(footer)

@@ -22,13 +22,13 @@ class UILayerCollectionCell : UICollectionViewCell {
             iconImage.layer.borderWidth = 3
             iconImage.layer.cornerRadius = Config.defaultCornerRadius
             iconImage.layer.masksToBounds = true
-            iconImage.layer.borderColor = AirbusColor.textLight.value.cgColor
+            iconImage.layer.borderColor = Color.textLight.value.cgColor
         }
     }
     @IBOutlet weak var iconLabel: UILabel! {
         didSet {
             iconLabel.font = AirbusFont.tinyBold.value
-            iconLabel.textColor = AirbusColor.textLight.value
+            iconLabel.textColor = Color.textLight.value
         }
     }
     

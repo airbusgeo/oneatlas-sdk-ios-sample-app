@@ -8,7 +8,7 @@
 
 import UIKit
 import RMDateSelectionViewController
-
+import OneAtlas
 
 
 struct SearchFilterCriteria {
@@ -69,8 +69,8 @@ class SearchResultsFilterVC: BaseFilterVC {
             // Oh, you want to customize UISegmentedControl in iOS13 ?
             // https://medium.com/flawless-app-stories/ios-13-uisegmentedcontrol-3-important-changes-d3a94fdd6763
             scResolution.selectedSegmentTintColor = Config.appColor
-            scResolution.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AirbusColor.textWhite.value], for: .selected)
-            scResolution.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AirbusColor.textDark.value], for: .normal)
+            scResolution.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : Color.textWhite.value], for: .selected)
+            scResolution.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : Color.textDark.value], for: .normal)
         } else {
             scResolution.tintColor = Config.appColor
         }
@@ -170,7 +170,10 @@ class SearchResultsFilterVC: BaseFilterVC {
     
     private func setDate(date:Date?, onButton button:UIButton) {
         if let d = date {
-            button.setTitle(DateUtils.niceDate(date: d, daysAgo: -1, utc: true), for: .normal)
+            button.setTitle(DateUtils.niceDate(date: d,
+                                               daysAgo: -1,
+                                               utc: true),
+                            for: .normal)
         }
         else {
             button.setTitle(Config.loc("bsfilter_no_date"), for: .normal)

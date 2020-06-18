@@ -12,7 +12,7 @@ import Pulley
 import OneAtlas
 
 protocol FeatureDetailsDrawerDelegate: BaseDrawerDelegate {
-    func onFeatureDetailsCancelClicked(feature:OAFeature)
+    func onFeatureDetailsCancelClicked(feature:Feature)
 }
 
 class FeatureDetailsDrawerVC: BaseDrawerVC {
@@ -31,7 +31,7 @@ class FeatureDetailsDrawerVC: BaseDrawerVC {
     }
     
     
-    var feature:OAFeature? {
+    var feature:Feature? {
         didSet {
             uvFeature.feature = feature
             tvProductFeature.feature = feature
@@ -48,7 +48,7 @@ class FeatureDetailsDrawerVC: BaseDrawerVC {
         super.viewDidLoad()
         UIFeaturePropertyCell.registerNibIntoTable(tvProductFeature)
         
-        btCancel.tintColor = AirbusColor.textLight.value
+        btCancel.tintColor = Color.textLight.value
         
         uvFeature.isHidden = true
         

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreLocation
 
 
 class UIUserAOITableCell: UIAutoRegisterTableCell {
@@ -20,16 +20,17 @@ class UIUserAOITableCell: UIAutoRegisterTableCell {
         return 64
     }
     
-    var aoi: OAUserAOI? {
+    var aoi: UserAOI? {
         didSet {
-            if let aoi = aoi, let p = aoi.centroid() {
+            if let aoi = aoi {
+                let p = aoi.centroid
                 lbName.text = aoi.name
                 
                 // reverse geocode
-                let coord_str = "(" + GeoUtils.coordinateString(coord: p.coordinate) + ")"
+                let coord_str = "(" + GeoUtils.coordinateString(coord: CLLocationCoordinate2D.from(point: p)) + ")"
                 lbCoords.text = coord_str
                 
-                GeoUtils.performReverseGeocoding(coord: p.coordinate) { (placemark, error) in
+                GeoUtils.performReverseGeocoding(coord: CLLocationCoordinate2D.from(point: p)) { (placemark, error) in
                     DispatchQueue.main.async {
                         if let placemark = placemark {
                             self.lbCoords.text = placemark.name + " " + coord_str
@@ -46,7 +47,7 @@ class UIUserAOITableCell: UIAutoRegisterTableCell {
         
         ivIcon.tintColor = Config.appColor
         lbName.textColor = Config.appColor
-        lbCoords.textColor = AirbusColor.textLight.value
+        lbCoords.textColor = Color.textLight.value
         lbName.font = AirbusFont.regularBold.value
         lbCoords.font = AirbusFont.tiny.value
     }

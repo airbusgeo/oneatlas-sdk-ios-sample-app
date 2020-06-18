@@ -17,11 +17,11 @@ protocol UIWorkspaceTableViewDelegate {
 
 class UIWorkspaceTableView: UIPagingTableView {
     
-    private var _geometry:OAGeometry?
+    private var _geometry: Geometry?
     private var _criteria = SearchFilterCriteria()
     private var _workspaceID:String?
     private var _workspaceKind:EWorkspaceKind?
-    private var _processingLevel:EProcessingLevel?
+    private var _processingLevel: EProcessingLevel?
     
     var workspaceDelegate:UIWorkspaceTableViewDelegate?
     
@@ -33,7 +33,7 @@ class UIWorkspaceTableView: UIPagingTableView {
     }
     
 
-    func resetWithGeometry(_ geometry:OAGeometry? = nil,
+    func resetWithGeometry(_ geometry: Geometry? = nil,
                            workspaceKind: EWorkspaceKind,
                            workspaceID: String,
                            processingLevel: EProcessingLevel? = nil,
@@ -85,43 +85,53 @@ extension UIWorkspaceTableView: UIPagingTableViewDelegate {
         }
         else if let workspaceID = _workspaceID {
             
-            let pagination = OAPagination.makePage(UInt(page), itemsPerPage: Config.defaultPagingTableCount)!
-            let filter = OASearchFilter.init()
-            
-            filter.add(ERelationIntersects)
-            
+            let filter = SearchFilter()
+
+            filter.add(value: ERelation.intersects,
+                       for: .relation)
+
             if let geometry = _geometry {
-                filter.setGeometry(geometry)
+                filter.add(value: geometry,
+                           for: .geometry)
             }
+
             if let minDate = _criteria.minDate {
-                filter.setMinAcquisitionDate(minDate, included: true)
+                filter.set(minValue: minDate,
+                           for: .acquisitionDate)
             }
+            
             if let maxDate = _criteria.maxDate {
-                filter.setMaxAcquisitionDate(maxDate, included: true)
+                filter.set(maxValue: maxDate,
+                           for: .acquisitionDate)
             }
-            
-            filter.setMaxCloudCover(Double(_criteria.maxCloud), included: true)
-            filter.setMaxIncidenceAngle(Double(_criteria.maxAngle), included: true)
-            
+
+            filter.set(maxValue: Double(_criteria.maxAngle),
+                       for: .cloudCover)
+
+            filter.set(maxValue: Double(_criteria.maxAngle),
+                       for: .incidenceAngle)
+
             if let res = Config.filterResolutions[_criteria.resolutionIndex] {
-                    filter.setResolution(res)
+                filter.add(value: res,
+                           for: .resolution)
             }
-            
+
             if let processingLevel = _processingLevel {
-                filter.setProcessingLevel(processingLevel)
+                filter.set(value: processingLevel,
+                           for: .processingLevel)
             }
+ 
+            let sort = SearchSort()
+            sort.add(criteria: .acquisitionDate,
+                     order: .descending)
             
-            let sort = OASearchSort.init()
-            sort.addSortingCriteria(ESearchSortAcquisitionDate, order: ESortOrderDescending)
-            
-            OneAtlas.sharedInstance()?.searchService.openSearch(with: pagination,
-                                                                workspaceID: workspaceID,
-                                                                filter: filter,
-                                                                sort: sort,
-                                                                block: { (features: [OAFeature]?, pagination: OAPagination?, error: OAError?) in
+            OneAtlas.shared.searchService?.openSearch(into: workspaceID,
+                                                      pagination: Pagination(page: page),
+                                                      filter: filter,
+                                                      sort: sort,
+                                                      block: { (features: [Feature]?, pagination: Pagination?, error: Error?) in
                 let total = Int(pagination?.totalItems ?? 0)
                 self.pagingCompletion(withItems: features, maxItems: total, error: error)
-
             })
         }
     }
@@ -142,12 +152,12 @@ extension UIWorkspaceTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         var cell:UITableViewCell?
-        if let feature = _items[indexPath.row] as? OAProductFeature {
+        if let feature = _items[indexPath.row] as? ProductFeature {
             let ftc = tableView.dequeueReusableCell(withIdentifier: UIFeatureTableCell.identifier(), for: indexPath) as! UIFeatureTableCell
             ftc.feature = feature
             cell = ftc
         }
-        else if let aoi = _items[indexPath.row] as? OAUserAOI {
+        else if let aoi = _items[indexPath.row] as? UserAOI {
             let uatc = tableView.dequeueReusableCell(withIdentifier: UIUserAOITableCell.identifier(), for: indexPath) as! UIUserAOITableCell
             uatc.aoi = aoi
             cell = uatc

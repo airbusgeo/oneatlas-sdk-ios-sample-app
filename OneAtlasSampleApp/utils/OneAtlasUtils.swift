@@ -7,34 +7,28 @@
 //
 
 import UIKit
-
 import OneAtlas
 
 
-extension OASubscription {
-    
-    var isData: Bool {
-        return subscriptionKind == ESubscriptionKindDataFreemium || subscriptionKind == ESubscriptionKindDataPremium
-    }
+extension Subscription {
     
     var isVisible: Bool {
-        return subscriptionKind != ESubscriptionKindOneAtlas
+        return !(self is OneAtlasSubscription)
     }
     
     var typeIcon: UIImage {
         var ret = UIImage()
-        switch subscriptionKind {
-        case ESubscriptionKindDataPremium, ESubscriptionKindDataFreemium:
+        switch type(of: self) {
+        case is PremiumDataSubscription.Type, is FreemiumDataSubscription.Type:
             ret = UIImage(named: "baseline_image_search_black_48pt")!
-        case ESubscriptionKindEarthMonitor:
+        case is EarthMonitorSubscription.Type:
             ret = UIImage(named: "icons8-earth_planet_filled")!
-        case ESubscriptionKindOceanFinder:
+        case is OceanFinderSubscription.Type:
             ret = UIImage(named: "icons8-sail_boat")!
-        case ESubscriptionKindAnalyticsToolbox, ESubscriptionKindChangeDetection:
+        case is AnalyticsToolboxSubscription.Type, is ChangeDetectionSubscription.Type:
             ret = UIImage(named: "baseline_compare_black_36pt")!
-        case ESubscriptionKindVerde:
+        case is VerdeSubscription.Type:
             ret = UIImage(named: "icons8-leaf")!
-//        case ESubscriptionKindOneAtlas:
         default:
             break
         }
@@ -44,20 +38,19 @@ extension OASubscription {
     
     var kindString: String {
         var ret = Config.loc("subscription_kind_unknown")
-        switch subscriptionKind {
-        case ESubscriptionKindDataPremium, ESubscriptionKindDataFreemium:
+        switch type(of: self) {
+        case is PremiumDataSubscription.Type, is FreemiumDataSubscription.Type:
             ret = Config.loc("subscription_kind_living_library")
-        case ESubscriptionKindEarthMonitor:
+        case is EarthMonitorSubscription.Type:
             ret = Config.loc("subscription_kind_earth_monitor")
-        case ESubscriptionKindOceanFinder:
+        case is OceanFinderSubscription.Type:
             ret = Config.loc("subscription_kind_ocean_finder")
-        case ESubscriptionKindAnalyticsToolbox:
+        case is AnalyticsToolboxSubscription.Type:
             ret = Config.loc("subscription_kind_analytics_toolbox")
-        case ESubscriptionKindChangeDetection:
+        case is ChangeDetectionSubscription.Type:
             ret = Config.loc("subscription_kind_change_detection")
-        case ESubscriptionKindVerde:
+        case is VerdeSubscription.Type:
             ret = Config.loc("subscription_kind_verde")
-        //        case ESubscriptionKindOneAtlas:
         default:
             break
         }
@@ -66,20 +59,20 @@ extension OASubscription {
     
     
     var statusString: String {
-        return OASubscription.statusString(status: status)
+        return Subscription.statusString(status: status)
     }
     
     
-    private class func statusString(status:ESubscriptionStatus) -> String {
+    private class func statusString(status: ESubscriptionStatus) -> String {
         var ret = Config.loc("subscription_status_unknown")
         switch status {
-        case ESubscriptionStatusActive:
+        case .active:
             ret = Config.loc("subscription_status_active");
-        case ESubscriptionStatusPending:
+        case .pending:
             ret = Config.loc("subscription_status_pending");
-        case ESubscriptionStatusRevoked:
+        case .revoked:
             ret = Config.loc("subscription_status_revoked");
-        case ESubscriptionStatusSuspended:
+        case .suspended:
             ret = Config.loc("subscription_status_suspended");
         default:
             break;
@@ -88,16 +81,21 @@ extension OASubscription {
     }
     
     
-    var daysRemaining: Int {
-        let components = Calendar.current.dateComponents([.day], from: Date.init(), to: endedAt)
-        return components.day!
+    var daysRemaining: Int? {
+        if let ended = endedAt {
+            let components = Calendar.current.dateComponents([.day],
+                                                             from: Date(),
+                                                             to: ended)
+            return components.day!
+        }
+        return nil
     }
     
     
     class func amountString(_ amount:Double) -> String {
         var ret = ""
         if let ds = UserManager.activeDataSubscription {
-            ret = ds.isTiles ? "\(Int(amount))" : MiscUtils.megabyteString(fromKilobytes: Int(amount))
+            ret = /*ds.isTiles ? "\(Int(amount))" : */MiscUtils.megabyteString(fromKilobytes: Int(amount))
             ret = ret + " " + ds.unit
         }
         return ret
@@ -122,29 +120,21 @@ private func getAmountString(amount:Double,
 }
 
 
-extension OAProductPrice {
-    var amountString: String {
-        return getAmountString(amount: Double(amount), amountUnit: amountUnit)
-    }
-}
+//extension ProductPrice {
+//    var amountString: String {
+//        return getAmountString(amount: Double(amount), amountUnit: amountUnit)
+//    }
+//}
 
 
-extension OADataSubscription {
-    var isFreemium: Bool {
-        return self is OADataFreemiumSubscription || self is OADataFreemiumTilesSubscription
-    }
-    
-    var isTiles: Bool {
-        return self is OADataPremiumTilesSubscription || self is OADataFreemiumTilesSubscription
-    }
-
+extension DataSubscription {
     var unit:String {
-        return isTiles ? Config.loc("unit_tiles") : Config.loc("unit_mb")
+        return /*isTiles ? Config.loc("unit_tiles") : */ Config.loc("unit_mb")
     }
 }
 
 
-extension OAOrder {
+extension Order {
     
     var amountString: String {
         return getAmountString(amount: amount, amountUnit: amountUnit)
@@ -152,25 +142,28 @@ extension OAOrder {
 
     
     var kindString:String {
-        return OAOrder.kindString(kind: kind)
+        return Order.kindString()
     }
     
     
-    class func kindString(kind:EOrderKind) -> String {
+    class func kindString() -> String {
         var ret = Config.loc("order_details_unknown")
-        switch kind {
-        case EOrderKindProduct:
+        switch type(of: self) {
+        case is ProductOrder.Type:
             ret = Config.loc("order_details_image")
-        case EOrderKindChangeDetection:
-            ret = Config.loc("order_details_change_detection");
-        case EOrderKindAnalyticsToolbox:
+        case is AnalyticsToolboxOrder.Type:
             ret = Config.loc("order_details_analytics_toolbox");
-        case EOrderKindEarthMonitor:
+        // TODO: compile
+            /*
+        case .changeDetection:
+            ret = Config.loc("order_details_change_detection");
+        case .earthMonitor:
             ret = Config.loc("order_details_earth_monitor");
-        case EOrderKindOceanFinder:
+        case .oceanFinder:
             ret = Config.loc("order_details_ocean_finder");
-        case EOrderKindVerde:
+        case .verde:
             ret = Config.loc("order_details_verde");
+             */
         default:
             break
         }
@@ -179,17 +172,17 @@ extension OAOrder {
     
     
     var statusColor: UIColor {
-        return OAOrder.statusColor(status: status)
+        return Order.statusColor(status: status)
     }
     
     
-    class func statusColor(status:EOrderStatus) -> UIColor {
-        var color = AirbusColor.textLight.value
+    class func statusColor(status: EOrderStatus) -> UIColor {
+        var color = Color.textLight.value
         switch status {
-        case EOrderStatusDelivered:
-            color = AirbusColor.green.value
-        case EOrderStatusError:
-            color = AirbusColor.red.value
+        case .delivered:
+            color = Color.green.value
+        case .error:
+            color = Color.red.value
         default:
             break
         }
@@ -198,43 +191,23 @@ extension OAOrder {
     
     
     var statusString: String {
-        return OAOrder.statusString(status: status)
+        return Order.statusString(status: status)
     }
     
 
-    class func statusString(status:EOrderStatus) -> String {
+    class func statusString(status: EOrderStatus) -> String {
         var ret = Config.loc("orders_status_unknown")
         switch status {
-        case EOrderStatusOrdered:
+        case .ordered:
             ret = Config.loc("orders_status_pending");
-        case EOrderStatusPending:
+        case .pending:
             ret = Config.loc("orders_status_pending");
-        case EOrderStatusDelivered:
+        case .delivered:
             ret = Config.loc("orders_status_delivered");
-        case EOrderStatusError:
+        case .error:
             ret = Config.loc("orders_status_error");
         default:
             break;
-        }
-        return ret
-    }
-}
-
-
-extension OAPolygon {
-    var southWest: CLLocationCoordinate2D {
-        var ret: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-        if let bbox = boundingBox(), bbox.count == 2 {
-            ret = bbox[0].coordinate
-        }
-        return ret
-    }
-    
-    
-    var northEast: CLLocationCoordinate2D {
-        var ret: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-        if let bbox = boundingBox(), bbox.count == 2 {
-            ret = bbox[1].coordinate
         }
         return ret
     }
