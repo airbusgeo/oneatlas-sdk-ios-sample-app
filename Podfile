@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'OneAtlasSampleApp' do
 
-  pod 'OneAtlas', '~> 1.3.0'
+  pod 'OneAtlas', '~> 1.4.1'
 
   # Mapbox
   pod 'MapboxGeocoder.swift'
@@ -28,4 +28,14 @@ target 'OneAtlasSampleApp' do
   # used to select a date in filters
   pod 'RMDateSelectionViewController', '~> 2.3.1' # MIT
   
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name == 'SwiftyJSON' || target.name == 'SwiftyXMLParser'
+      target.build_configurations.each do |config|
+        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      end
+    end
+  end
 end

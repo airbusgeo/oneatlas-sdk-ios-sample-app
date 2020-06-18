@@ -27,11 +27,11 @@ class MapHelpVC: BaseFilterVC {
 
         ivHand.alpha = 0
         
-        lbShow.textColor = AirbusColor.textDark.value
+        lbShow.textColor = Color.textDark.value
         lbShow.font = AirbusFont.tiny.value
         lbShow.text = Config.loc("lp_tut_dontshow")
 
-        lbHelp.textColor = AirbusColor.textDark.value
+        lbHelp.textColor = Color.textDark.value
         lbHelp.font = AirbusFont.regularBold.value
         lbHelp.text = Config.loc("lp_tut_explain")
 

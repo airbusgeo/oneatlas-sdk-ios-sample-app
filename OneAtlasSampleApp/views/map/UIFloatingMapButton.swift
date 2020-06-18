@@ -48,7 +48,7 @@ class UIFloatingMapButton: UIButton {
         buttonState = .searchCollapsed
     }
     
-    var feature: OAFeature?
+    var feature: Feature?
     
     var buttonState: EFloatingMapButtonState {
         get {
@@ -73,7 +73,7 @@ class UIFloatingMapButton: UIButton {
     
     override var isEnabled: Bool  {
         didSet {
-            backgroundColor = isEnabled ? currentBackgroundColor : AirbusColor.textLight.value
+            backgroundColor = isEnabled ? currentBackgroundColor : Color.textLight.value
         }
     }
     

@@ -24,7 +24,7 @@ class UICountingListView: UIXibView {
         tvResults.backgroundColor = .clear
         
         lbCount.text = ""
-        lbCount.textColor = AirbusColor.textLight.value
+        lbCount.textColor = Color.textLight.value
         lbCount.font = AirbusFont.tiny.value
     }
 

@@ -25,11 +25,11 @@ class UIFeaturePropertyCell: UIAutoRegisterTableCell {
         didSet {
             lbValue.text = property.value
             lbValue.font = AirbusFont.tiny.value
-            lbValue.textColor = AirbusColor.textLight.value
+            lbValue.textColor = Color.textLight.value
             
             lbName.text = property.title
             lbName.font = AirbusFont.small.value
-            lbName.textColor = AirbusColor.textDark.value
+            lbName.textColor = Color.textDark.value
 
             ivIcon.tintColor = Config.appColor
             ivIcon.image = UIImage(named:property.icon) ?? UIImage(named: "icon_angle")!

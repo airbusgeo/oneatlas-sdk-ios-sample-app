@@ -10,31 +10,15 @@ import UIKit
 import CoreLocation
 import OneAtlas
 
-fileprivate let FIREBASE_MESSAGING_ID = "FIREBASE_MESSAGING_ID"
-
-
 fileprivate let MAP_DID_REQUEST_LOCATION = "MAP_DID_REQUEST_LOCATION"
 fileprivate let MAP_DID_DECLINE_HELP = "MAP_DID_DECLINE_HELP"
 
 class CacheUtils: NSObject {
-
     
     private class func set(_ val:Any, forKey key:String) {
         UserDefaults.standard.set(val, forKey: key)
         UserDefaults.standard.synchronize()
     }
-    
-    
-    // firebase
-    static var firebaseMessagingID:String {
-        set {
-            set(newValue, forKey: FIREBASE_MESSAGING_ID)
-        }
-        get {
-            return UserDefaults.standard.string(forKey: FIREBASE_MESSAGING_ID) ?? ""
-        }
-    }
-    
     
     // map
     static var mapDidRequestLocation:Bool {

@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import SDWebImage
-
 import OneAtlas
+
 
 class UIFeatureSummaryView: UIXibView {
     fileprivate static let THUMBNAIL_PLACEHOLDER = UIImage(named: "layer_default")
@@ -30,11 +29,11 @@ class UIFeatureSummaryView: UIXibView {
     @IBOutlet weak var ivEye: UIImageView!
     
     
-    var feature:OAFeature? {
+    var feature: Feature? {
         didSet {
-            if let feature = feature as? OAProductFeature {
+            if let feature = feature as? ProductFeature {
                 
-                if let date = feature.dateProperty(EProductFeaturePropertyAcquisitionDate) {
+                if let date = feature.properties[.acquisitionDate] as? Date {
                     lbTitle.text = "\(DateUtils.niceDate(date: date, daysAgo: -1, utc: true)) "
                                    + Config.loc("g_at")
                                    + " \(DateUtils.niceTime(date: date, utc: true))"
@@ -42,26 +41,30 @@ class UIFeatureSummaryView: UIXibView {
                 else {
                     lbTitle.text = Config.loc("g_unknown_date")
                 }
-                                
-                ivThumbnail.sd_setImage(with: feature.thumbnailURL,
-                                        placeholderImage: UIFeatureSummaryView.THUMBNAIL_PLACEHOLDER,
-                                        completed: nil)
-                
+
+                ivThumbnail.image = UIFeatureSummaryView.THUMBNAIL_PLACEHOLDER
+                feature.downloadThumbnail() { (image, error) in
+                    if let image = image {
+                        self.ivThumbnail.image = image
+                    }
+                }
+
                 ivThumbnail.layer.masksToBounds = true
-                lbConstellation.textColor = AirbusColor.textLight.value;
-                lbAngle.textColor = AirbusColor.textLight.value;
-                lbCoverage.textColor = AirbusColor.textLight.value;
+                lbConstellation.textColor = Color.textLight.value;
+                lbAngle.textColor = Color.textLight.value;
+                lbCoverage.textColor = Color.textLight.value;
                 lbTitle.textColor = Config.appColor;
-                
+
                 ivAngle.tintColor = Config.appColor
                 ivCoverage.tintColor = Config.appColor
-                
-                let cstr = feature.property(EProductFeaturePropertyConstellation) as! String
-                let c = OAConstellation.constellation(cstr)
-                lbConstellation.text = OAConstellation.constellationDisplayName(c)
-                
-                lbAngle.text = String(format: "%.01f°", feature.number(EProductFeaturePropertyIncidenceAngle)?.doubleValue ?? 0)
-                lbCoverage.text = String(format: "%d%%", Int(feature.number(EProductFeaturePropertyCloudCover)?.doubleValue ?? 0))
+
+                if let cstr = feature.properties[.constellation] as? String {
+                    let c = EConstellation(rawValue: cstr) ?? .unknown
+                    lbConstellation.text = c.displayName
+                }
+
+                lbAngle.text = String(format: "%.01f°", feature.properties[.incidenceAngle] as? Double ?? 0)
+                lbCoverage.text = String(format: "%d%%", Int(feature.properties[.cloudCover] as? Double ?? 0))
             }
             else {
                 // TODO: handle more feature types...

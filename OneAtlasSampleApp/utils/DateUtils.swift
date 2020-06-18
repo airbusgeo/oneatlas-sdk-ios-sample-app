@@ -8,11 +8,11 @@
 
 import UIKit
 import DateToolsSwift
+import OneAtlas
 
 
-class DateUtils: NSObject {
-    
-    
+extension DateUtils {
+   
     class func readableDateUTC(date:Date) -> String {
         let df = DateFormatter.init()
         df.dateStyle = .medium

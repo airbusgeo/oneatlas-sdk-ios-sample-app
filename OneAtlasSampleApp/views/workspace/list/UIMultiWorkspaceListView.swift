@@ -51,9 +51,9 @@ enum EWorkspaceKind: Int {
             case .livingLibrary:
             ret = Config.appColor
         case .myImages:
-            ret = AirbusColor.orders.value
+            ret = Color.orders.value
         case .myAOIs, .changeDetection:
-            ret = AirbusColor.workspace.value
+            ret = Color.workspace.value
         }
         return ret
     }
@@ -126,7 +126,7 @@ class UIMultiWorkspaceListView: UIXibView {
         }
     }
     
-    var geometry:OAGeometry? {
+    var geometry: Geometry? {
         didSet {
             refreshWorkspace()
         }
@@ -149,7 +149,7 @@ class UIMultiWorkspaceListView: UIXibView {
         tbWorkspace.backgroundImage = UIImage()
         tbWorkspace.backgroundColor = .clear
         tbWorkspace.shadowImage = UIImage()
-        tbWorkspace.unselectedItemTintColor = AirbusColor.textLight.value
+        tbWorkspace.unselectedItemTintColor = Color.textLight.value
     }
     
     

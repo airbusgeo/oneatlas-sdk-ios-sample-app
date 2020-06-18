@@ -34,7 +34,7 @@ class UIFeatureDetailsTableView: UITableView {
     
     var workspaceKind:EWorkspaceKind?
 
-    var feature:OAFeature? {
+    var feature:Feature? {
         didSet {
             refresh()
         }
@@ -71,47 +71,47 @@ class UIFeatureDetailsTableView: UITableView {
     
     private func buildPropertyList() {
         
-        if feature is OAProductFeature {
+        if feature is ProductFeature {
             
             // ARCHIVE
             _archiveProps.append((title:Config.loc("fp_sourceIdentifier"),
-                                  value:valueFromProperty(EProductFeaturePropertySourceID, unit:""),
+                                  value:valueFromProperty(.sourceID, unit:""),
                                   icon:"baseline_image_black_18pt"))
             _archiveProps.append((title:Config.loc("fp_acquisitionDate"),
-                                  value:valueFromProperty(EProductFeaturePropertyAcquisitionDate, unit:""),
+                                  value:valueFromProperty(.acquisitionDate, unit:""),
                                   icon:"baseline_calendar_today_black_18pt"))
             _archiveProps.append((title:Config.loc("fp_azimuthAngle"),
-                                  value:valueFromProperty(EProductFeaturePropertyAzimuthAngle, unit:"°"),
+                                  value:valueFromProperty(.azimuthAngle, unit:"°"),
                                   icon:"icon_angle"))
             _archiveProps.append((title:Config.loc("fp_cloudCover"),
-                                  value:valueFromProperty(EProductFeaturePropertyCloudCover, unit:"%"),
+                                  value:valueFromProperty(.cloudCover, unit:"%"),
                                   icon:"icon_cloud"))
             _archiveProps.append((title:Config.loc("fp_illuminationAzimuthAngle"),
-                                  value:valueFromProperty(EProductFeaturePropertyIlluminationAzimuthAngle, unit:"°"),
+                                  value:valueFromProperty(.illuminationAzimuthAngle, unit:"°"),
                                   icon:"icon_angle"))
             _archiveProps.append((title:Config.loc("fp_illuminationElevationAngle"),
-                                  value:valueFromProperty(EProductFeaturePropertyIlluminationElevationAngle, unit:"°"),
+                                  value:valueFromProperty(.illuminationElevationAngle, unit:"°"),
                                   icon:"icon_angle"))
             _archiveProps.append((title:Config.loc("fp_incidenceAngleAlongTrack"),
-                                  value:valueFromProperty(EProductFeaturePropertyIncidenceAngleAlongTrack, unit:"v"),
+                                  value:valueFromProperty(.incidenceAngleAlongTrack, unit:"v"),
                                   icon:"icon_angle"))
             _archiveProps.append((title:Config.loc("fp_incidenceAngleAcrossTrack"),
-                                  value:valueFromProperty(EProductFeaturePropertyIncidenceAngleAcrossTrack, unit:"°"),
+                                  value:valueFromProperty(.incidenceAngleAcrossTrack, unit:"°"),
                                   icon:"icon_angle"))
             
             
             // PRODUCTION
             _productionProps.append((title:Config.loc("fp_processingLevel"),
-                                     value:valueFromProperty(EProductFeaturePropertyProcessingLevel, unit:""),
+                                     value:valueFromProperty(.processingLevel, unit:""),
                                      icon:"icon_gear"))
             _productionProps.append((title:Config.loc("fp_sensorType"),
-                                     value:valueFromProperty(EProductFeaturePropertySensorType, unit:""),
+                                     value:valueFromProperty(.sensorType, unit:""),
                                      icon:"baseline_satellite_black_18pt"))
             _productionProps.append((title:Config.loc("fp_spectralRange"),
-                                     value:valueFromProperty(EProductFeaturePropertySpectralRange, unit:""),
+                                     value:valueFromProperty(.spectralRange, unit:""),
                                      icon:"baseline_remove_red_eye_black_18pt"))
             _productionProps.append((title:Config.loc("fp_productType"),
-                                     value:valueFromProperty(EProductFeaturePropertyProductType, unit:""),
+                                     value:valueFromProperty(.productType, unit:""),
                                      icon:"icon_up"))
         }
         else {
@@ -120,10 +120,11 @@ class UIFeatureDetailsTableView: UITableView {
     }
     
     
-    private func valueFromProperty(_ prop:EProductFeatureProperty, unit:String) -> String {
+    private func valueFromProperty(_ prop:EProductFeatureProperty,
+                                   unit:String) -> String {
         var disp_val = ""
-        if let productFeature = feature as? OAProductFeature,
-            let val = productFeature.property(prop) {
+        if let productFeature = feature as? ProductFeature,
+            let val = productFeature.properties[prop] {
 
             if let str = val as? String {
                 disp_val = str

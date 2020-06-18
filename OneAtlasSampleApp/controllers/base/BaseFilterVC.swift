@@ -9,7 +9,6 @@
 import UIKit
 
 
-
 protocol BaseFilterDelegate {
     func onApplyClicked()
     func onResetClicked()
@@ -86,7 +85,7 @@ class BaseFilterVC: UIViewController {
 
         
         btApply.backgroundColor = Config.appColor
-        btApply.tintColor = AirbusColor.textWhite.value
+        btApply.tintColor = Color.textWhite.value
         btApply.layer.cornerRadius = Config.defaultCornerRadius
     }
     

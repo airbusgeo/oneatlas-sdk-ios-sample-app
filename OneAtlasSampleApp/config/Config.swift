@@ -13,10 +13,9 @@ import OneAtlas
 class Config: NSObject {
     
     static let appColor = UIColor(hexString: AirbusPrimaryPalette.blue.rawValue)
-
     
     static let defaultPagingTableCount:UInt = 20
-    static let livingLibraryWorkspaceID = OneAtlas.livingLibraryWorkspaceID()!
+    static let livingLibraryWorkspaceID = OneAtlas.shared.livingLibraryWorkspaceID
     
     // UI stuff
     static let defaultCornerRadius = CGFloat(10)

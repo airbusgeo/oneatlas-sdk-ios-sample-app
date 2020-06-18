@@ -48,7 +48,7 @@ class UINavigationBarButton: UIButton {
             let bsz = size / 2.5
             filter._badge = UIView.init(frame: CGRect.init(x: origin.x, y: origin.y, width: bsz, height: bsz))
             if let badge = filter._badge {
-                badge.backgroundColor = AirbusColor.red.value
+                badge.backgroundColor = Color.red.value
                 badge.layer.cornerRadius = badge.bounds.size.width / 2
                 badge.isHidden = true
                 filter.addSubview(badge)

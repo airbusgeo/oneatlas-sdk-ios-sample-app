@@ -19,7 +19,7 @@ class UIFeatureTableCell: UIAutoRegisterTableCell {
         return 80
     }
     
-    var feature:OAFeature? {
+    var feature: Feature? {
         didSet {
             uvFeature.feature = feature
         }

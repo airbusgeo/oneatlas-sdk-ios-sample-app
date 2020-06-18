@@ -38,7 +38,7 @@ class UICardHeaderView: UIXibView {
         clipsToBounds = true
         layer.cornerRadius = Config.defaultCornerRadius
         layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-        backgroundColor = AirbusColor.cardHeader.value
+        backgroundColor = Color.cardHeader.value
     }
     
     

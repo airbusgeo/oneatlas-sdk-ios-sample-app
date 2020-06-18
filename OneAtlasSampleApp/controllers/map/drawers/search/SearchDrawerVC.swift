@@ -82,7 +82,7 @@ class SearchDrawerVC: BaseTableDrawerVC {
         _presenter = SearchDrawerPresenter(searchDrawerView: self)
         searchBar.delegate = self
         
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: AirbusColor.textDark.value]
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: Color.textDark.value]
 
         UISearchDrawerCell.registerNibIntoTable(tableView)
     }
