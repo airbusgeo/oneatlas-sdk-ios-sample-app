@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '11.0'
 use_frameworks!
 
 target 'OneAtlasSampleApp' do
@@ -8,13 +8,13 @@ target 'OneAtlasSampleApp' do
 
   # Mapbox
   pod 'MapboxGeocoder.swift'
-  pod 'Mapbox-iOS-SDK'
+  pod 'Mapbox-iOS-SDK', '~> 5.9.0'
   
   # nice notifications
   pod 'Toast-Swift' # MIT
   
   # map view drawers
-  pod 'Pulley' # MIT
+  pod 'Pulley', '~> 2.8.4' # MIT
   
   # used by 'do not show' button
   pod 'GDCheckbox' # MIT
@@ -27,15 +27,15 @@ target 'OneAtlasSampleApp' do
 
   # used to select a date in filters
   pod 'RMDateSelectionViewController', '~> 2.3.1' # MIT
-  
 end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-    if target.name == 'SwiftyJSON' || target.name == 'SwiftyXMLParser'
-      target.build_configurations.each do |config|
-        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-      end
+
+    # suppress "IPHONEOS_DEPLOYMENT_TARGET is set to 8.0" warnings
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      config.build_settings['IPHONESIMULATOR_DEPLOYMENT_TARGET'] = '9.0'
     end
   end
 end
