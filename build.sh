@@ -1,3 +1,6 @@
+#!/bin/zsh
+
+
 # ------------------------------------------------------------------------------
 SCHEME_NAME=OneAtlasSampleApp
 WORKSPACE_FILE=OneAtlasSampleApp.xcworkspace
