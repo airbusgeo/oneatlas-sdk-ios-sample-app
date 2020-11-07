@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import GDCheckbox
+import M13Checkbox
 
 
 class MapHelpVC: BaseFilterVC {
@@ -16,7 +16,7 @@ class MapHelpVC: BaseFilterVC {
     @IBOutlet weak var ivHand: UIImageView!
     @IBOutlet weak var lbHelp: UILabel!
     
-    @IBOutlet weak var cbShow: GDCheckbox!
+    @IBOutlet weak var cbShow: M13Checkbox!
     @IBOutlet weak var lbShow: UILabel!
     
     private var _step = 0
@@ -35,8 +35,11 @@ class MapHelpVC: BaseFilterVC {
         lbHelp.font = AirbusFont.regularBold.value
         lbHelp.text = Config.loc("lp_tut_explain")
 
-        cbShow.checkColor = Config.appColor
-        cbShow.containerColor = Config.appColor
+        cbShow.boxType = .circle
+        cbShow.tintColor = Config.appColor
+        cbShow.secondaryTintColor = Config.appColor
+        cbShow.markType = .checkmark
+        cbShow.stateChangeAnimation = .bounce(.fill)
 
         setupWithTitle(Config.loc("lp_tut_title"),
                        color: Config.appColor,
@@ -51,8 +54,9 @@ class MapHelpVC: BaseFilterVC {
     }
     
     
-    @IBAction func onDeclineChecked(_ sender: Any) {
-        CacheUtils.mapDidDeclineHelp = cbShow.isOn
+    override func onApplyClicked(_ sender: Any) {
+        super.onApplyClicked(sender)
+        CacheUtils.mapDidDeclineHelp = (cbShow.checkState == .checked)
     }
     
     

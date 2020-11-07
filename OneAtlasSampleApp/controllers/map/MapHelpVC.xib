@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapHelpVC" customModule="OneAtlasData_INT" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapHelpVC" customModule="OneAtlasSampleApp" customModuleProvider="target">
             <connections>
                 <outlet property="alphaView" destination="hgJ-kz-EvK" id="TRJ-BT-Cji"/>
                 <outlet property="backView" destination="xOW-PH-NJz" id="kPx-Ck-1ST"/>
                 <outlet property="btApply" destination="j9l-fA-WyC" id="Mbo-5a-7Sd"/>
-                <outlet property="cbShow" destination="WRS-gP-IaH" id="LjF-FY-6Ms"/>
+                <outlet property="cbShow" destination="WRS-gP-IaH" id="456-9R-vje"/>
                 <outlet property="headerView" destination="XUU-33-OvO" id="foj-JK-nXF"/>
                 <outlet property="ivHand" destination="JvW-IO-TOo" id="ezt-o4-wNF"/>
                 <outlet property="ivHelp" destination="B3e-tL-dul" id="hds-Au-o8y"/>
@@ -36,7 +34,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOW-PH-NJz">
                     <rect key="frame" x="8" y="154.5" width="398" height="597"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUU-33-OvO" customClass="UICardHeaderView" customModule="OneAtlasData_INT" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUU-33-OvO" customClass="UICardHeaderView" customModule="OneAtlasSampleApp" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="398" height="44"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -66,7 +64,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmu-Tu-gOl">
                             <rect key="frame" x="16" y="509" width="366" height="72"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRS-gP-IaH" customClass="GDCheckbox" customModule="GDCheckbox">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRS-gP-IaH" customClass="M13Checkbox" customModule="M13Checkbox">
                                     <rect key="frame" x="8" y="8" width="24" height="24"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -79,9 +77,6 @@
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCircular" value="YES"/>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="NO"/>
                                     </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="onDeclineChecked:" destination="-1" eventType="touchUpInside" id="Tfl-Sv-L3b"/>
-                                    </connections>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not show this message again." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeY-k9-H0Q">
                                     <rect key="frame" x="40" y="1" width="318" height="38"/>
@@ -147,6 +142,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="9rW-nA-Bz0"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="hgJ-kz-EvK" firstAttribute="height" secondItem="HgB-va-1Sg" secondAttribute="height" id="4Zw-N0-UpL"/>
@@ -161,7 +157,6 @@
                 <constraint firstItem="xOW-PH-NJz" firstAttribute="leading" secondItem="9rW-nA-Bz0" secondAttribute="leading" constant="8" id="trC-ky-bz8"/>
                 <constraint firstItem="hgJ-kz-EvK" firstAttribute="centerX" secondItem="HgB-va-1Sg" secondAttribute="centerX" id="vpc-sZ-Qcu"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="9rW-nA-Bz0"/>
             <point key="canvasLocation" x="-220.28985507246378" y="24.776785714285712"/>
         </view>
     </objects>
