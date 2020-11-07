@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		090B6CFF2338B50E00983E87 /* UISearchDrawerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090B6CFC2338B50E00983E87 /* UISearchDrawerHeader.swift */; };
 		090B6D032338B53900983E87 /* UISearchDrawerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090B6D002338B53900983E87 /* UISearchDrawerHeader.xib */; };
-		09203BC22354A1BC00C4E7DE /* UIUserAOITableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09203BBE2354A1BC00C4E7DE /* UIUserAOITableCell.swift */; };
 		09203BC52354A1BC00C4E7DE /* UIUserAOITableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09203BBF2354A1BC00C4E7DE /* UIUserAOITableCell.xib */; };
 		09203BCC2355D17800C4E7DE /* UIFloatingMapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09203BC62355CF5600C4E7DE /* UIFloatingMapButton.swift */; };
 		092F48C62333DE29008002A3 /* UISearchDrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F48C42333DE29008002A3 /* UISearchDrawerCell.swift */; };
@@ -622,7 +621,6 @@
 				093785802330C6EE0054DCF1 /* ToastUtils.swift in Sources */,
 				09F6DE202350671E00B9E469 /* UIPassthroughView.swift in Sources */,
 				093785532330C6BC0054DCF1 /* BaseDrawerVC.swift in Sources */,
-				09203BC22354A1BC00C4E7DE /* UIUserAOITableCell.swift in Sources */,
 				093785A92330C6F80054DCF1 /* UICardFooterView.swift in Sources */,
 				8B87EF79249B6FCE0059F7FE /* AirbusFonts.swift in Sources */,
 				093785BB2330C6F80054DCF1 /* UIPagingTableView.swift in Sources */,

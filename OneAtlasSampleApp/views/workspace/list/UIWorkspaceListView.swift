@@ -43,7 +43,7 @@ class UIWorkspaceListView: UICountingListView {
         
         // setup specific table and cells
         UIFeatureTableCell.registerNibIntoTable(tvResults)
-        UIUserAOITableCell.registerNibIntoTable(tvResults)
+//        UIUserAOITableCell.registerNibIntoTable(tvResults)
         if let table = tvResults as? UIWorkspaceTableView {
             table.workspaceDelegate = self
         }

@@ -22,6 +22,12 @@ echo
 echo "ℹ️  Installing required Pods..."
 export LANG=en_US.UTF-8
 pod install
+if [[ $? == 0 ]]; then
+  echo "✅ Pod install passed."
+else
+  echo "🔴 Pod install failed !"
+  exit 1
+fi
 # ------------------------------------------------------------------------------
 
 
@@ -34,8 +40,7 @@ xcodebuild build -workspace $WORKSPACE_FILE \
                  -destination="iOS" \
                  -configuration Release \
                  -sdk iphoneos
-echo
-if [[ $PIPESTATUS == 0 ]]; then
+if [[ $? == 0 ]]; then
   echo "✅ Device build passed."
 else
   echo "🔴 Device build failed !"
@@ -53,10 +58,8 @@ xcodebuild build -workspace $WORKSPACE_FILE \
                  -destination="iOS Simulator" \
                  -configuration Release \
                  -sdk iphonesimulator \
-				 VALID_ARCHS="x86_64" \
-
-echo
-if [[ $PIPESTATUS == 0 ]]; then
+				         VALID_ARCHS="x86_64"
+if [[ $? == 0 ]]; then
   echo "✅ Simulator build passed."
 else
   echo "🔴 Simulator build failed !"

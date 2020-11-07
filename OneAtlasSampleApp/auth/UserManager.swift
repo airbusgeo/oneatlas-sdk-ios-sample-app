@@ -47,8 +47,8 @@ class UserManager: NSObject {
                                     isFreemium = true
                                     if let polygons = sub.geometry as? MultiPolygon {
                                         // convert multi-polygon to AOI array
-                                        freemiumAOIs = UserAOI.buildAOIsFromMultiPolygon(polygons,
-                                                                                           nameFormat: Config.loc("myworkspace_freemium_area"))
+//                                        freemiumAOIs = UserAOI.buildAOIsFromMultiPolygon(polygons,
+//                                                                                           nameFormat: Config.loc("myworkspace_freemium_area"))
                                     }
                                 }
                                 
