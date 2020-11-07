@@ -2,10 +2,6 @@
 # OneAtlasData sample app Podfile
 # ==============================================================================
 platform :ios, '12.0'
-plugin 'cocoapods-art', :sources => [
-  'cocoa-local'
-]
-source 'https://cdn.cocoapods.org'
 
 
 # ==============================================================================
