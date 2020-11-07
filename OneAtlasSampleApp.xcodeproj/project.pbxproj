@@ -76,6 +76,7 @@
 		8B87EF79249B6FCE0059F7FE /* AirbusFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B87EF77249B6FCE0059F7FE /* AirbusFonts.swift */; };
 		8B87EF7B249B70B10059F7FE /* UserAOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B87EF7A249B70B10059F7FE /* UserAOI.swift */; };
 		8B87EF7D249B70C20059F7FE /* MapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B87EF7C249B70C20059F7FE /* MapUtils.swift */; };
+		8BFDBD632556BE130077E5D5 /* UIUserAOITableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09203BBE2354A1BC00C4E7DE /* UIUserAOITableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -591,6 +592,7 @@
 				093785572330C6BC0054DCF1 /* SearchResultsDrawerVC.swift in Sources */,
 				093784D42330C6310054DCF1 /* AppDelegate.swift in Sources */,
 				8B87EF7B249B70B10059F7FE /* UserAOI.swift in Sources */,
+				8BFDBD632556BE130077E5D5 /* UIUserAOITableCell.swift in Sources */,
 				093785B52330C6F80054DCF1 /* UIWorkspaceTableView.swift in Sources */,
 				093785BA2330C6F80054DCF1 /* UIFeatureSummaryView.swift in Sources */,
 				0937857D2330C6EE0054DCF1 /* XibUtils.swift in Sources */,

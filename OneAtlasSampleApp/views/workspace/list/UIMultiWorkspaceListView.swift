@@ -239,10 +239,10 @@ extension UIMultiWorkspaceListView: UITableViewDelegate {
                 let feature = cell.feature
                 delegate?.onMultiWorkspaceListViewItemSelected(tab_item.kind, item: feature as Any)
             }
-//            else if let cell = tableView.cellForRow(at: indexPath) as? UIUserAOITableCell {
-//                let aoi = cell.aoi
-//                delegate?.onMultiWorkspaceListViewItemSelected(tab_item.kind, item: aoi as Any)
-//            }
+            else if let cell = tableView.cellForRow(at: indexPath) as? UIUserAOITableCell {
+                let aoi = cell.aoi
+                delegate?.onMultiWorkspaceListViewItemSelected(tab_item.kind, item: aoi as Any)
+            }
             else {
                 // TODO: handle AOIs
             }

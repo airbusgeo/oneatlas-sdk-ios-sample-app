@@ -355,23 +355,23 @@ extension MapVC: MapViewContract {
         resetMap()
         
         // add AOI
-//        _mapEngine?.addAOIShape(polygon: aoi,
-//                                type: .user,
-//                                title: aoi.name,
-//                                color: Config.appColor)
-//        
-//        // fly to AOI
-//        let region = MapRectangularRegion(sw: CLLocationCoordinate2D.from(point: aoi.boundingBox.southWest),
-//                                          ne: CLLocationCoordinate2D.from(point: aoi.boundingBox.northEast))
-//        _mapEngine?.flyCameraToRegion(region: region,
-//                                      edgeInsets: defaultMapEdgeInsets,
-//                                      duration: Config.animDurationSlow)
-//
-//        
-//        // show search results
-//        _drawerManager?.showSearchResultDrawer(geometry: aoi,
-//                                               title: aoi.name,
-//                                               delegate: self)
+        _mapEngine?.addAOIShape(polygon: aoi,
+                                type: .user,
+                                title: aoi.name,
+                                color: Config.appColor)
+        
+        // fly to AOI
+        let region = MapRectangularRegion(sw: CLLocationCoordinate2D.from(point: aoi.boundingBox.southWest),
+                                          ne: CLLocationCoordinate2D.from(point: aoi.boundingBox.northEast))
+        _mapEngine?.flyCameraToRegion(region: region,
+                                      edgeInsets: defaultMapEdgeInsets,
+                                      duration: Config.animDurationSlow)
+
+        
+        // show search results
+        _drawerManager?.showSearchResultDrawer(geometry: aoi,
+                                               title: aoi.name,
+                                               delegate: self)
     }
 
     

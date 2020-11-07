@@ -157,11 +157,11 @@ extension UIWorkspaceTableView: UITableViewDataSource {
             ftc.feature = feature
             cell = ftc
         }
-//        else if let aoi = _items[indexPath.row] as? UserAOI {
-//            let uatc = tableView.dequeueReusableCell(withIdentifier: UIUserAOITableCell.identifier(), for: indexPath) as! UIUserAOITableCell
-//            uatc.aoi = aoi
-//            cell = uatc
-//        }
+        else if let aoi = _items[indexPath.row] as? UserAOI {
+            let uatc = tableView.dequeueReusableCell(withIdentifier: UIUserAOITableCell.identifier(), for: indexPath) as! UIUserAOITableCell
+            uatc.aoi = aoi
+            cell = uatc
+        }
         else {
             cell = UITableViewCell(style: .default, reuseIdentifier: "")
         }
