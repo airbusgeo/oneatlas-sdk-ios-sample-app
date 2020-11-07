@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		090B6CFF2338B50E00983E87 /* UISearchDrawerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090B6CFC2338B50E00983E87 /* UISearchDrawerHeader.swift */; };
 		090B6D032338B53900983E87 /* UISearchDrawerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090B6D002338B53900983E87 /* UISearchDrawerHeader.xib */; };
-		09203BC22354A1BC00C4E7DE /* UIUserAOITableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09203BBE2354A1BC00C4E7DE /* UIUserAOITableCell.swift */; };
 		09203BC52354A1BC00C4E7DE /* UIUserAOITableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09203BBF2354A1BC00C4E7DE /* UIUserAOITableCell.xib */; };
 		09203BCC2355D17800C4E7DE /* UIFloatingMapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09203BC62355CF5600C4E7DE /* UIFloatingMapButton.swift */; };
 		092F48C62333DE29008002A3 /* UISearchDrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F48C42333DE29008002A3 /* UISearchDrawerCell.swift */; };
@@ -77,6 +76,7 @@
 		8B87EF79249B6FCE0059F7FE /* AirbusFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B87EF77249B6FCE0059F7FE /* AirbusFonts.swift */; };
 		8B87EF7B249B70B10059F7FE /* UserAOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B87EF7A249B70B10059F7FE /* UserAOI.swift */; };
 		8B87EF7D249B70C20059F7FE /* MapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B87EF7C249B70C20059F7FE /* MapUtils.swift */; };
+		8BFDBD632556BE130077E5D5 /* UIUserAOITableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09203BBE2354A1BC00C4E7DE /* UIUserAOITableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -592,6 +592,7 @@
 				093785572330C6BC0054DCF1 /* SearchResultsDrawerVC.swift in Sources */,
 				093784D42330C6310054DCF1 /* AppDelegate.swift in Sources */,
 				8B87EF7B249B70B10059F7FE /* UserAOI.swift in Sources */,
+				8BFDBD632556BE130077E5D5 /* UIUserAOITableCell.swift in Sources */,
 				093785B52330C6F80054DCF1 /* UIWorkspaceTableView.swift in Sources */,
 				093785BA2330C6F80054DCF1 /* UIFeatureSummaryView.swift in Sources */,
 				0937857D2330C6EE0054DCF1 /* XibUtils.swift in Sources */,
@@ -622,7 +623,6 @@
 				093785802330C6EE0054DCF1 /* ToastUtils.swift in Sources */,
 				09F6DE202350671E00B9E469 /* UIPassthroughView.swift in Sources */,
 				093785532330C6BC0054DCF1 /* BaseDrawerVC.swift in Sources */,
-				09203BC22354A1BC00C4E7DE /* UIUserAOITableCell.swift in Sources */,
 				093785A92330C6F80054DCF1 /* UICardFooterView.swift in Sources */,
 				8B87EF79249B6FCE0059F7FE /* AirbusFonts.swift in Sources */,
 				093785BB2330C6F80054DCF1 /* UIPagingTableView.swift in Sources */,
@@ -699,7 +699,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -755,7 +755,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

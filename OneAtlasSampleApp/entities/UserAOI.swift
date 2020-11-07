@@ -17,7 +17,7 @@ class UserAOI: Polygon {
     
     class func buildAOIsFromMultiPolygon(_ multip: MultiPolygon,
                                          nameFormat:String) -> [UserAOI] {
-        
+
         var idx = 0
         var temp: [UserAOI] = []
         for p in multip.polygons {
